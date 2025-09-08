@@ -234,16 +234,22 @@ _NEGATIVE_HINTS = [
 PRIORITY_KEYWORDS = {
     "성과": 3,
     "전환율": 3,
+    "퍼널": 3,
+    "배포": 3,
     "roas": 3,       # 대소문자 무시
-    "abt": 2,        # ABT (A/B 테스트 관련)
-    "a/b": 2,        # 'A/B' 표기도 보강
-    "실험": 2,
+    "abt": 3,        # ABT (A/B 테스트 관련)
+    "a/b": 3,        # 'A/B' 표기도 보강
+    "실험": 3,
     "배포 공유": 2,
     "효율화": 2,
     "자동화": 2,
     "prd": 2,
+    "문제정의": 2,
     "문제 정의": 2,
-    "uxui": 1,
+    "문제": 2,
+    "지표": 1,
+    "성공": 1,
+    "실패": 1,
     "요약": 1,
 }
 
@@ -358,21 +364,33 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
         if len(deduped) >= 80:
             break
 
-    # 최고 점수 기반 perf/importance 산출
+    # 최고 점수 기반 perf/importance 산출 (분포를 더 균등하게)
     top_score = deduped[0][0] if deduped else 0
     lowtext = (markdown_text or "").lower()
     perf_flag = "yes" if (top_score >= 3 or any(k in lowtext for k in ["okr","kr","kpi","전환","전환율","매출","roas","실험","a/b"])) else "no"
 
-    if top_score >= 7:
-        importance = 5
-    elif top_score >= 5:
-        importance = 4
-    elif top_score >= 3:
-        importance = 3
-    elif top_score >= 2:
-        importance = 2
-    else:
+    # 분포형 특징치: 상위 n개 평균, 밀도, 지표/키워드 존재 여부
+    top_nscores = [sc for sc, _ in deduped[:5]] if deduped else []
+    top_avg = sum(top_nscores) / max(1, len(top_nscores))
+    dense_cnt = sum(1 for sc, _ in deduped if sc >= 3)
+    dense_ratio = dense_cnt / max(1, len(lines) or 1)
+    metric_hit = bool(_METRIC_PAT.search(markdown_text or ""))
+
+    # 기본 중요도 가중 (균등 분포 지향)
+    if perf_flag == "no":
         importance = 1
+    else:
+        if metric_hit and (top_score >= 6 or dense_ratio >= 0.25):
+            importance = 5
+        elif (top_avg >= 5) or (dense_ratio >= 0.18) or (top_score >= 5):
+            importance = 4
+        elif (top_avg >= 3) or (dense_ratio >= 0.10) or metric_hit:
+            importance = 3
+        elif (top_score >= 2):
+            importance = 2
+        else:
+            importance = 2  # perf=yes인데 상위 스코어 낮으면 2로 완충
+    importance = int(max(1, min(5, importance)))
 
     # 상위 5줄 구성
     top_lines = [s for _, s in deduped][:5]
@@ -391,10 +409,6 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
     if sum(1 for t in top_lines if t.startswith("[")) >= 3 and len([t for t in top_lines if t and not t.startswith("[")]) == 0:
         top_lines = [
             "본문이 짧거나 형식 위주라 성과 요약이 어렵습니다.",
-            "지표/결정/액션/실험 관련 내용이 부족합니다.",
-            f"제목: {title}",
-            f"날짜: {created_date}",
-            "자세한 내용은 원문 링크를 참고하세요.",
         ]
     # 길이 제한
     top_lines = [ (l[:240] + "…") if len(l) > 240 else l for l in top_lines ]
@@ -1088,6 +1102,14 @@ def main():
             importance = local["importance"]
             summary_lines = local["summary_5lines"]
             log(f"[LOCAL] 요약 사용 id={nid} imp={importance} perf={perf_flag}")
+
+        # 1점인 경우 요약을 단일 라인으로 축약
+        try:
+            imp_int = int(importance)
+        except Exception:
+            imp_int = 1
+        if imp_int == 1:
+            summary_lines = ["본문이 짧거나 형식 위주라 성과 요약이 어렵습니다."]
 
         # 결과 적재
         out_row = {
