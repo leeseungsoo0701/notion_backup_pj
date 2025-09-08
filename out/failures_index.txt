@@ -1,0 +1,216 @@
+import argparse
+import json
+import os
+import sys
+import time
+import random
+from typing import Optional
+
+# make argparse namespace visible to helpers
+args = None  # will be assigned in main()
+
+FAIL_LOG = "failures_index.txt"
+
+_last_ai_call_ts: Optional[float] = None
+
+def append_failure(logfile, message):
+    with open(logfile, "a", encoding="utf-8") as f:
+        ts = time.strftime("%Y-%m-%d %H:%M:%S")
+        f.write(json.dumps({"ts": ts, "message": message}, ensure_ascii=False) + "\n")
+
+def log(msg):
+    print(msg, file=sys.stderr)
+
+def _sanitize_err(e: str) -> str:
+    try:
+        return (e or "").replace("\n", " ")[:500]
+    except Exception:
+        return "error"
+
+def call_openai_summary(md_text: str) -> dict:
+    """
+    OpenAI 요약 호출(5줄 요약/성과 여부/중요도).
+    - 429/5xx/네트워크 오류 시 지수 백오프 + 지터로 재시도
+    - --min-ai-interval 로 분당 제한 대응
+    반환 형식: {"perf_flag": "yes|no", "importance": int(1..5), "summary_5lines": "줄1\n줄2\n줄3\n줄4\n줄5"}
+    예외 발생 없이 항상 dict 반환; 실패 시 합리적 기본값을 담아 리턴
+    """
+    global _last_ai_call_ts
+    # 지연(속도 제한)
+    if args.min_ai_interval and args.min_ai_interval > 0:
+        now = time.time()
+        if _last_ai_call_ts is not None:
+            remain = args.min_ai_interval - (now - _last_ai_call_ts)
+            if remain > 0:
+                time.sleep(remain)
+        _last_ai_call_ts = time.time()
+
+    # 프롬프트 구성
+    sys_prompt = (
+        "당신은 PM/그로스 업무 문서를 성과 관점으로 요약하는 분석가입니다. "
+        "입력은 하나의 노션 페이지에서 추출한 마크다운 전문입니다. "
+        "다음을 판단해 주세요:\n"
+        "1) perf_flag: 성과/실적/지표 개선, OKR/KR 달성, 매출/전환/리텐션 등 성과에 직접 연결될 내용이 있으면 'yes', 아니면 'no'.\n"
+        "2) importance: 1(낮음)~5(매우 중요) 중 하나로, 회사 성과 관점에서 중요도 평가.\n"
+        "3) summary_5lines: 전체 문맥을 반영한 5줄 요약(문장단위, 불릿/머리말 금지, 줄바꿈으로 5줄).\n"
+        "반드시 JSON으로만 응답하세요. 키는 perf_flag, importance, summary_5lines 입니다."
+    )
+    user_prompt = (
+        "다음은 노션 페이지에서 추출한 마크다운입니다. 전체를 읽고 위 지침대로 JSON으로만 답하세요.\n\n"
+        f"{md_text[:120000]}"  # 안전상 길이 제한
+    )
+
+    # 실패 시 반환할 기본값
+    def _fallback(reason: str) -> dict:
+        append_failure(FAIL_LOG, f"OpenAI 실패({_sanitize_err(reason)})")
+        return {"perf_flag": "no", "importance": 1,
+                "summary_5lines": "AI 요약 실패: 후속 재시도(--force-retry-failed) 권장"}
+
+    # 모듈/키 확인
+    if not args.use_openai:
+        return _fallback("use_openai=False")
+    try:
+        import openai  # type: ignore
+        from openai import OpenAI
+    except Exception as e:
+        return _fallback(f"import_error: {e}")
+
+    if not os.getenv("OPENAI_API_KEY"):
+        return _fallback("no_api_key")
+
+    # 재시도 루프
+    tries = 0
+    backoff = max(0.1, float(getattr(args, "openai_initial_backoff", 1.0)))
+    max_retries = int(getattr(args, "openai_max_retries", 8))
+    max_backoff = float(getattr(args, "openai_max_backoff", 60.0))
+
+    while True:
+        tries += 1
+        try:
+            client = OpenAI()
+            resp = client.chat.completions.create(
+                model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
+                messages=[
+                    {"role": "system", "content": sys_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                temperature=0.2,
+                max_tokens=800,
+            )
+            content = (resp.choices[0].message.content or "").strip()
+            # JSON 파싱
+            data = json.loads(content)
+            # 정규화
+            pf = str(data.get("perf_flag", "no")).strip().lower()
+            if pf not in ("yes", "no"):
+                pf = "no"
+            imp = int(data.get("importance", 1))
+            if imp < 1 or imp > 5:
+                imp = 1
+            summ = data.get("summary_5lines", "")
+            if isinstance(summ, list):
+                summ = "\n".join([str(x) for x in summ])[:2000]
+            else:
+                summ = str(summ)[:2000]
+            return {"perf_flag": pf, "importance": imp, "summary_5lines": summ}
+        except Exception as e:
+            msg = str(e)
+            is_retryable = any(k in msg.lower() for k in [
+                "rate limit", "insufficient_quota", "429", "timeout", "temporarily unavailable",
+                "connection aborted", "server error", "service unavailable", "502", "503", "504"
+            ])
+            if args.openai_debug:
+                log(f"[OpenAI] error try#{tries}: {type(e).__name__}: {e}")
+            if is_retryable and tries <= max_retries:
+                # 지수 백오프 + 지터
+                sleep_s = min(max_backoff, backoff * (2 ** (tries - 1)))
+                jitter = random.uniform(0, sleep_s * 0.25)
+                delay = sleep_s + jitter
+                if args.openai_debug:
+                    log(f"[OpenAI] backoff {delay:.2f}s (retry {tries}/{max_retries})")
+                time.sleep(delay)
+                continue
+            # 비재시도 또는 최대 재시도 초과
+            return _fallback(f"{type(e).__name__}: {e}")
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--use-openai", action="store_true")
+    parser.add_argument("--openai-sanity-check", action="store_true")
+    parser.add_argument("--openai-debug", action="store_true")
+    parser.add_argument("--openai-max-retries", type=int, default=8,
+                        help="OpenAI 429/5xx 재시도 최대 횟수(기본 8)")
+    parser.add_argument("--openai-initial-backoff", type=float, default=1.0,
+                        help="OpenAI 재시도 초기 backoff(초), 지수 증가 + 지터(기본 1.0)")
+    parser.add_argument("--openai-max-backoff", type=float, default=60.0,
+                        help="OpenAI 재시도 최대 backoff(초, 기본 60)")
+    parser.add_argument("--min-ai-interval", type=float, default=0.0,
+                        help="OpenAI 호출 최소 간격(초). 0이면 비활성화")
+    # ... other arguments ...
+
+    global args
+    args = parser.parse_args()
+    globals()["args"] = args
+
+    # ... other code ...
+
+    # per-item processing loop example snippet:
+    for item in items:
+        # ... some code ...
+        if args.use_openai:
+            ai = call_openai_summary(item["md_text"])
+            perf_flag = ai.get("perf_flag", "no")
+            importance = ai.get("importance", 1)
+            summary_5lines = ai.get("summary_5lines", "")
+        else:
+            perf_flag = "no"
+            importance = 1
+            summary_5lines = ""
+
+        # ... write output row with perf_flag, importance, summary_5lines ...
+
+        # In case of OpenAI failure logs inside main loop:
+        # append_failure(FAIL_LOG, f"OpenAI 실패: {error_message}")
+        # do not raise or exit; continue processing
+        # pass instead of raise
+
+    # ... rest of main ...
+
+if __name__ == "__main__":
+    main()
+{"ts": "2025-09-08 11:53:47", "message": "[OpenAI] Sanity check FAILED(RateLimitError): Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"}
+{"ts": "2025-09-08 11:54:18", "message": "치명적 오류: FileNotFoundError: [Errno 2] No such file or directory: '.../manifest_dedup_sorted.csv'"}
+{"ts": "2025-09-08 11:54:21", "message": "치명적 오류: FileNotFoundError: [Errno 2] No such file or directory: '.../manifest_dedup_sorted.csv'"}
+{"ts": "2025-09-08 11:56:54", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "cb156a9f-1781-44d2-b3a3-73e81e188bfe"}}
+{"ts": "2025-09-08 11:57:00", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "8a0a05c0-734f-4084-9570-c59782d06cce"}}
+{"ts": "2025-09-08 11:57:02", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "74944420-ac3e-46ee-9110-bd2ad4665533"}}
+{"ts": "2025-09-08 11:57:05", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "be26bc62-f48e-4183-9bc4-656eb9d542a1"}}
+{"ts": "2025-09-08 11:57:08", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "1ba32673-8249-4e70-8ee6-85c2c5c465b5"}}
+{"ts": "2025-09-08 11:57:11", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "8f25e7de-6e72-443c-8090-75544ae47d0e"}}
+{"ts": "2025-09-08 11:57:14", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "d1e12c0c-88d4-41c9-b134-0d8f633a421d"}}
+{"ts": "2025-09-08 11:57:17", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "080001a5-1008-40d1-955f-39528ca4b892"}}
+{"ts": "2025-09-08 11:57:20", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "9c582c17-3818-4efc-97f8-430a0375edaa"}}
+{"ts": "2025-09-08 11:57:23", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "85cfb301-8f28-44c3-ba1a-1f9c04fa2570"}}
+{"ts": "2025-09-08 11:57:27", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "23369b38-4965-40b9-8811-f7cb40fbca16"}}
+{"ts": "2025-09-08 11:57:31", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "a8a10bea-0aae-4448-81e0-d0033a48cc85"}}
+{"ts": "2025-09-08 11:57:34", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "70adb08f-4efb-4b27-99d6-b3b7577a0f89"}}
+{"ts": "2025-09-08 11:57:38", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "dee2e8ab-0f9d-4888-a494-5c8d9f1e4a4a"}}
+{"ts": "2025-09-08 11:57:41", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "44681662-63ab-4a6b-8f0c-05cd612f7854"}}
+{"ts": "2025-09-08 11:57:44", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "9e95cd04-c20c-4814-8795-9cea9f47961d"}}
+{"ts": "2025-09-08 11:57:47", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "30defeb5-9e15-45fb-8ff1-a073f88fc299"}}
+{"ts": "2025-09-08 11:57:50", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "6bb791eb-f20b-4b84-9cec-c531a43ee98a"}}
+{"ts": "2025-09-08 11:57:53", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "dabdfa31-db65-4afe-a932-83c6b9bb5d6a"}}
+{"ts": "2025-09-08 11:57:56", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "03865320-8c75-4527-8689-a92a0c0fcd46"}}
+{"ts": "2025-09-08 11:58:00", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "ccb3d285-1d36-464b-8d9c-c7dbaed4850e"}}
+{"ts": "2025-09-08 14:10:02", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "a8a10bea-0aae-4448-81e0-d0033a48cc85"}}
+{"ts": "2025-09-08 14:10:04", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "70adb08f-4efb-4b27-99d6-b3b7577a0f89"}}
+{"ts": "2025-09-08 14:10:05", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "dee2e8ab-0f9d-4888-a494-5c8d9f1e4a4a"}}
+{"ts": "2025-09-08 14:10:06", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "44681662-63ab-4a6b-8f0c-05cd612f7854"}}
+{"ts": "2025-09-08 14:10:06", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "9e95cd04-c20c-4814-8795-9cea9f47961d"}}
+{"ts": "2025-09-08 14:10:08", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "30defeb5-9e15-45fb-8ff1-a073f88fc299"}}
+{"ts": "2025-09-08 14:10:10", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "6bb791eb-f20b-4b84-9cec-c531a43ee98a"}}
+{"ts": "2025-09-08 14:10:12", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "dabdfa31-db65-4afe-a932-83c6b9bb5d6a"}}
+{"ts": "2025-09-08 14:10:13", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "03865320-8c75-4527-8689-a92a0c0fcd46"}}
+{"ts": "2025-09-08 14:10:14", "message": "HF 실패: RuntimeError: transformers 패키지가 필요합니다. `pip install transformers torch` 후 다시 실행하세요.", "context": {"id": "ccb3d285-1d36-464b-8d9c-c7dbaed4850e"}}
+{"ts": "2025-09-08 14:22:17", "message": "/pages/e98cccff-50c6-4c36-b523-3c4d8f120b69 실패 status=400"}
+{"ts": "2025-09-08 14:41:58", "message": "/pages/e98cccff-50c6-4c36-b523-3c4d8f120b69 실패 status=400"}
