@@ -1,0 +1,15 @@
+# OS artifacts
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+.env.local
+
+# Logs
+out/*.log
+out/*.err.log
+

@@ -24,6 +24,104 @@ from typing import Dict, List, Set, Optional, Tuple
 from datetime import datetime
 
 import requests
+import subprocess
+import getpass
+
+# -------------------- .env 로더 --------------------
+def _load_dotenv(paths: Optional[List[str]] = None, override: bool = True) -> None:
+    """
+    간단한 .env 로더: key=value / export key=value / 따옴표 값 지원.
+    - 기본 검색 경로: ./.env, ./.env.local, ~/.env
+    - override=True이면 기존 환경값 위에 덮어씀.
+    보안상 값은 로그에 출력하지 않음.
+    """
+    try:
+        if paths is None:
+            paths = [
+                os.path.join(os.getcwd(), ".env"),
+                os.path.join(os.getcwd(), ".env.local"),
+                os.path.expanduser("~/.env"),
+            ]
+        for p in paths:
+            if not p or not os.path.exists(p):
+                continue
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    for line in f:
+                        s = line.strip()
+                        if not s or s.startswith("#"):
+                            continue
+                        if s.lower().startswith("export "):
+                            s = s[7:].lstrip()
+                        if "=" not in s:
+                            continue
+                        k, v = s.split("=", 1)
+                        k = k.strip()
+                        v = v.strip()
+                        # 따옴표 제거
+                        if (v.startswith('"') and v.endswith('"')) or (v.startswith("'") and v.endswith("'")):
+                            v = v[1:-1]
+                        # 간단한 이스케이프 처리
+                        v = v.replace("\\n", "\n").replace("\\t", "\t")
+                        if override or not os.environ.get(k):
+                            os.environ[k] = v
+            except Exception:
+                # .env 파싱 실패는 치명적이지 않음
+                pass
+    except Exception:
+        pass
+
+# .env 로드: API_TOKEN 계산 전에 실행되어야 함
+_load_dotenv()
+
+# -------------------- macOS Keychain/프롬프트 비밀 로더 --------------------
+def _get_secret(name: str, prompt_label: str) -> str:
+    """
+    우선순위: 환경변수 → macOS Keychain(security) → 터미널 비밀 입력(getpass)
+    Keychain에 없고 사용자가 입력하면, 같은 이름(Service=name, Account=$USER)으로 저장 시도.
+    """
+    val = os.environ.get(name, "").strip()
+    if val:
+        return val
+    # macOS Keychain 조회
+    try:
+        user = os.environ.get("USER", "")
+        r = subprocess.run(
+            ["/usr/bin/security", "find-generic-password", "-a", user, "-s", name, "-w"],
+            capture_output=True, text=True
+        )
+        if r.returncode == 0:
+            return r.stdout.strip()
+    except Exception:
+        pass
+    # 터미널 입력
+    try:
+        v = getpass.getpass(f"Enter {prompt_label} (input hidden): ").strip()
+        if v:
+            try:
+                user = os.environ.get("USER", "")
+                subprocess.run(
+                    ["/usr/bin/security", "add-generic-password", "-U", "-a", user, "-s", name, "-w", v],
+                    check=False,
+                )
+            except Exception:
+                pass
+            return v
+    except Exception:
+        pass
+    return ""
+
+def _resolve_tokens_from_keychain_or_prompt():
+    """NOTION_TOKEN / OPENAI_API_KEY 보완 로드"""
+    global API_TOKEN
+    if (not API_TOKEN) or API_TOKEN == "PUT_YOUR_INTEGRATION_TOKEN_HERE":
+        api = _get_secret("NOTION_TOKEN", "NOTION_TOKEN (Notion integration token)")
+        if api:
+            API_TOKEN = api
+    if not os.environ.get("OPENAI_API_KEY", "").strip():
+        v = _get_secret("OPENAI_API_KEY", "OPENAI_API_KEY")
+        if v:
+            os.environ["OPENAI_API_KEY"] = v
 
 # -------------------- 환경/설정 --------------------
 BASE_URL = "https://api.notion.com/v1"
@@ -205,6 +303,19 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
     - 후보: 헤딩/리스트/숫자포함/키워드 포함 라인 위주
     - 점수: 키워드/숫자/동사/결정 키워드로 가중
     """
+    def _is_noise(s: str) -> bool:
+        if not s:
+            return True
+        punct = sum(1 for ch in s if ch in "`~!@#$%^&*()_-+=|\\{}[]:;\"'<>,.?/·•●○★☆△▷©®™，。；：！？」『』“”’”“…％‰")
+        if punct / max(1, len(s)) > 0.35:
+            return True
+        core = sum(1 for ch in s if ("0" <= ch <= "9") or ("a" <= ch.lower() <= "z") or ("가" <= ch <= "힣"))
+        if core / max(1, len(s)) < 0.4 and len(s) < 50:
+            return True
+        if len(s.split()) <= 1 and len(s) < 8:
+            return True
+        return False
+
     lines = []
     for raw in (markdown_text or "").splitlines():
         s = _clean_line(raw)
@@ -212,6 +323,8 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
             continue
         # 의미 없는 라인 필터
         if s.lower().startswith(("http://","https://")):
+            continue
+        if _is_noise(s):
             continue
         # callout 이모지 제거 흔적
         s = s.replace("💡", "").strip()
@@ -247,7 +360,8 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
 
     # 최고 점수 기반 perf/importance 산출
     top_score = deduped[0][0] if deduped else 0
-    perf_flag = "yes" if top_score >= 3 else ("yes" if any(k in (markdown_text or "").lower() for k in ["okr","kr","kpi","전환","매출"]) else "no")
+    lowtext = (markdown_text or "").lower()
+    perf_flag = "yes" if (top_score >= 3 or any(k in lowtext for k in ["okr","kr","kpi","전환","전환율","매출","roas","실험","a/b"])) else "no"
 
     if top_score >= 7:
         importance = 5
@@ -273,6 +387,15 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
             if len(top_lines) >= 5: break
             if x and x not in top_lines:
                 top_lines.append(x)
+    # 전부 보강성 메타만 남는 경우, 안내 문장으로 대체
+    if sum(1 for t in top_lines if t.startswith("[")) >= 3 and len([t for t in top_lines if t and not t.startswith("[")]) == 0:
+        top_lines = [
+            "본문이 짧거나 형식 위주라 성과 요약이 어렵습니다.",
+            "지표/결정/액션/실험 관련 내용이 부족합니다.",
+            f"제목: {title}",
+            f"날짜: {created_date}",
+            "자세한 내용은 원문 링크를 참고하세요.",
+        ]
     # 길이 제한
     top_lines = [ (l[:240] + "…") if len(l) > 240 else l for l in top_lines ]
     # 5개 맞추기
@@ -330,16 +453,17 @@ def block_to_md(block: dict) -> str:
     # child_page/child_database 등은 상위에서 별도로 순회하므로 스킵
     return ""
 
-def get_page_markdown(page_id: str, max_blocks: int = 2000) -> str:
-    """첫 max_blocks 만큼 1단계 children을 Markdown으로 단순 결합(깊이 1, 속도 우선)"""
+def get_page_markdown(page_id: str, max_blocks: int = 2000, depth: int = 2) -> str:
+    """첫 max_blocks 만큼 children을 depth 단계까지 Markdown으로 결합"""
     lines: List[str] = []
-    cursor = None
     scanned = 0
-    while True and scanned < max_blocks:
-        data = blocks_children(page_id, start_cursor=cursor, page_size=100)
+
+    def walk(parent_id: str, cur_depth: int, cursor: Optional[str] = None):
+        nonlocal scanned, lines
+        if scanned >= max_blocks:
+            return
+        data = blocks_children(parent_id, start_cursor=cursor, page_size=100)
         results = data.get("results", [])
-        if not results:
-            break
         for blk in results:
             if scanned >= max_blocks:
                 break
@@ -347,9 +471,15 @@ def get_page_markdown(page_id: str, max_blocks: int = 2000) -> str:
             if md:
                 lines.append(md)
             scanned += 1
-        if not data.get("has_more"):
-            break
-        cursor = data.get("next_cursor")
+            if cur_depth > 1 and blk.get("has_children"):
+                try:
+                    walk(blk.get("id"), cur_depth - 1, None)
+                except Exception:
+                    pass
+        if data.get("has_more") and scanned < max_blocks:
+            walk(parent_id, cur_depth, data.get("next_cursor"))
+
+    walk(page_id, max(1, int(depth)))
     return "\n".join(lines).strip()
 
 # -------------------- OpenAI --------------------
@@ -417,6 +547,10 @@ def call_openai_summary(
     initial_backoff: float = 1.0,
     max_backoff: float = 60.0,
     min_interval: float = 0.0,
+    summary_lang: str = "ko",
+    chunk_threshold: int = 16000,
+    chunk_size: int = 6000,
+    chunk_overlap: int = 400,
 ) -> dict:
     """
     전체 마크다운을 읽고 '성과에 쓸만한가' 기준으로 5줄 요약/중요도/성과여부를 JSON으로 반환.
@@ -425,51 +559,119 @@ def call_openai_summary(
     """
     client = get_openai()
 
-    sys_prompt = (
-        "You are a performance review assistant for a PM.\n"
-        "Given a single Notion page (rendered as Markdown), read ALL content and decide:\n"
-        "1) perf_flag: 'yes' if there is any content usable for performance review; otherwise 'no'.\n"
-        "2) importance: integer 1~5 (5 is most impactful to performance review).\n"
-        "3) summary_5lines: a 5-line summary capturing concrete achievements, metrics, decisions, and outcomes.\n"
-        "Return ONLY valid JSON with keys: perf_flag, importance, summary_5lines (array of 5 strings)."
-    )
-    user_prompt = f"# Notion Markdown\n{markdown_text}\n"
+    # --- 내부: 단일 청크 요약 함수 (JSON 강제) ---
+    def _single_chunk(md_text: str) -> dict:
+        sys_prompt = (
+            "You are a performance review assistant for a PM.\n"
+            "Read the entire Notion page (Markdown) and decide:\n"
+            "- perf_flag: 'yes' if there is any content usable for performance review; else 'no'.\n"
+            "- importance: integer 1~5 (5 is the most impactful).\n"
+            "- summary_5lines: exactly 5 bullet-like lines capturing concrete achievements, metrics (%/numbers), decisions, and outcomes.\n"
+            f"Write the summary_5lines in language: {summary_lang}.\n"
+            "Return ONLY valid JSON with keys: perf_flag, importance, summary_5lines (array of 5 strings)."
+        )
+        user_prompt = f"# Notion Markdown\n{md_text}\n"
 
-    tries = 0
-    last_err = None
-    backoff = max(0.1, float(initial_backoff))
+        tries = 0
+        last_err = None
+        backoff = max(0.1, float(initial_backoff))
+        while tries < max_retries:
+            tries += 1
+            try:
+                _throttle(min_interval)
+                resp = client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": sys_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    temperature=0.2,
+                    timeout=timeout,
+                    response_format={"type": "json_object"},
+                )
+                text = resp.choices[0].message.content.strip()
+                if debug:
+                    print("[OpenAI][raw]", text[:500], "..." if len(text) > 500 else "")
+                return parse_ai_output(text)
+            except KeyboardInterrupt:
+                raise
+            except Exception as e:
+                es = str(e)
+                if "insufficient_quota" in es or "You exceeded your current quota" in es:
+                    raise e
+                last_err = e
+                wait = min(max_backoff, backoff) * (1.0 + (0.25 * (time.time() % 1)))
+                time.sleep(wait)
+                backoff *= 2
+        raise last_err
 
-    while tries < max_retries:
-        tries += 1
-        try:
-            _throttle(min_interval)
-            resp = client.chat.completions.create(
-                model=model,
-                messages=[
-                    {"role": "system", "content": sys_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-                temperature=0.2,
-                timeout=timeout,
-            )
-            text = resp.choices[0].message.content.strip()
-            if debug:
-                print("[OpenAI][raw]", text[:500], "..." if len(text) > 500 else "")
-            return parse_ai_output(text)
-        except KeyboardInterrupt:
-            raise
-        except Exception as e:
-            # 쿼터 부족은 빠르게 상위로
-            es = str(e)
-            if "insufficient_quota" in es or "You exceeded your current quota" in es:
-                raise e
-            last_err = e
-            # 지수 백오프 + 지터
-            wait = min(max_backoff, backoff) * (1.0 + (0.25 * (time.time() % 1)))
-            time.sleep(wait)
-            backoff *= 2
+    # --- 길면 맵-리듀스 요약 경로 ---
+    text = (markdown_text or "").strip()
+    if len(text) > max(2000, int(chunk_threshold)):
+        # 1) map: 청크별 5줄 요약
+        chunks: List[str] = []
+        i = 0
+        n = len(text)
+        size = max(1000, int(chunk_size))
+        ov = max(0, int(chunk_overlap))
+        while i < n:
+            j = min(n, i + size)
+            chunks.append(text[i:j])
+            if j >= n:
+                break
+            i = j - ov if (j - ov) > i else j
 
-    raise last_err
+        inter_lines: List[str] = []
+        for idx, ch in enumerate(chunks, start=1):
+            try:
+                ai = _single_chunk(ch)
+                inter_lines.extend([s for s in ai.get("summary_5lines", []) if s])
+            except Exception as e:
+                append_failure(FAIL_LOG, f"OpenAI chunk 실패: {type(e).__name__}: {e}")
+
+        merged = "\n".join(inter_lines)[:80000] if inter_lines else text[:80000]
+        # 2) reduce: 중간 요약들을 다시 5줄로 압축
+        reduce_prompt = (
+            "You will be given bullet points summarized from different sections of a long document.\n"
+            "Synthesize them into exactly 5 lines focused on concrete achievements, metrics, decisions, and outcomes.\n"
+            f"Write the 5 lines in language: {summary_lang}.\n"
+            "Return ONLY valid JSON with keys: perf_flag, importance (1~5), summary_5lines (array of 5 strings)."
+        )
+        tries = 0
+        last_err = None
+        backoff = max(0.1, float(initial_backoff))
+        while tries < max_retries:
+            tries += 1
+            try:
+                _throttle(min_interval)
+                resp = client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": reduce_prompt},
+                        {"role": "user", "content": merged},
+                    ],
+                    temperature=0.2,
+                    timeout=timeout,
+                    response_format={"type": "json_object"},
+                )
+                text2 = resp.choices[0].message.content.strip()
+                if debug:
+                    print("[OpenAI][reduce]", text2[:500], "..." if len(text2) > 500 else "")
+                return parse_ai_output(text2)
+            except KeyboardInterrupt:
+                raise
+            except Exception as e:
+                es = str(e)
+                if "insufficient_quota" in es or "You exceeded your current quota" in es:
+                    raise e
+                last_err = e
+                wait = min(max_backoff, backoff) * (1.0 + (0.25 * (time.time() % 1)))
+                time.sleep(wait)
+                backoff *= 2
+        raise last_err
+
+    # --- 짧으면 단일 호출 경로 ---
+    return _single_chunk(text)
 
 # -------------------- Hugging Face Summarizer --------------------
 _hf_summarizer = None
@@ -658,6 +860,10 @@ def main():
     parser.add_argument("--openai-initial-backoff", type=float, default=1.0, help="OpenAI 재시도 초기 대기(초)")
     parser.add_argument("--openai-max-backoff", type=float, default=60.0, help="OpenAI 재시도 최대 대기(초)")
     parser.add_argument("--min-ai-interval", type=float, default=0.0, help="OpenAI 호출 최소 간격(초) - 레이트리밋 회피")
+    parser.add_argument("--summary-lang", type=str, default="ko", help="요약 출력 언어(ko/en 등)")
+    parser.add_argument("--openai-chunk-threshold", type=int, default=16000, help="이 길이 이상이면 맵-리듀스 요약")
+    parser.add_argument("--openai-chunk-size", type=int, default=6000, help="청크 크기(문자 기준)")
+    parser.add_argument("--openai-chunk-overlap", type=int, default=400, help="청크 오버랩(문자)")
 
     # Hugging Face 옵션
     parser.add_argument("--use-hf", action="store_true", default=False,
@@ -671,22 +877,28 @@ def main():
 
     # 진행/성능 옵션
     parser.add_argument("--max-blocks", type=int, default=2000, help="본문 스캔 최대 블록 수")
-    parser.add_argument("--autosave-every", type=int, default=200, help="N건마다 자동 저장")
+    parser.add_argument("--md-depth", type=int, default=2, help="본문 수집 깊이(1=직계만, 2 이상 권장)")
+    parser.add_argument("--autosave-every", type=int, default=20, help="N건마다 자동 저장")
+    parser.add_argument("--autosave-interval-seconds", type=int, default=30, help="이 초마다 주기 저장(행 수와 무관)")
     parser.add_argument("--progress-every", type=int, default=50, help="N건마다 진행 로그")
     parser.add_argument("--per-item-log", action="store_true", default=False, help="각 행 시작 로그")
 
     args = parser.parse_args()
 
     # Notion 토큰 검증(요약에 필요한 본문을 불러오려면 필요)
+    # .env → Keychain → 프롬프트 순으로 보완 로드 후 검증
+    _resolve_tokens_from_keychain_or_prompt()
     if not API_TOKEN or API_TOKEN == "PUT_YOUR_INTEGRATION_TOKEN_HERE":
-        log("❗ NOTION_TOKEN 환경변수를 설정하거나 스크립트 상단 API_TOKEN을 실제 토큰으로 바꾸세요.")
+        log("❗ NOTION_TOKEN 미설정: Keychain/프롬프트에서도 확보 실패")
         sys.exit(2)
     validate_token_ascii(API_TOKEN)
 
-    # OpenAI 키 확인
+    # OpenAI 키 확인 (필요 시 Keychain/프롬프트 시도)
     if args.use_openai and not os.environ.get("OPENAI_API_KEY"):
-        log("❗ OPENAI_API_KEY 환경변수가 없습니다. --use-openai 를 끄거나 키를 설정하세요.")
-        sys.exit(2)
+        _resolve_tokens_from_keychain_or_prompt()
+        if not os.environ.get("OPENAI_API_KEY"):
+            log("❗ OPENAI_API_KEY 미설정: --use-openai 를 끄거나 Keychain/프롬프트로 설정하세요.")
+            sys.exit(2)
 
     # Ctrl+C 안전 종료
     stop_flag = {"stop": False}
@@ -764,6 +976,7 @@ def main():
 
     processed = 0
     written_since_autosave = 0
+    last_autosave_ts = time.time()
     pending_rows: List[dict] = []
 
     def flush(reason: str):
@@ -791,7 +1004,7 @@ def main():
         try:
             page = retrieve_page(nid)
             if page:
-                md = get_page_markdown(nid, max_blocks=args.max_blocks)
+                md = get_page_markdown(nid, max_blocks=args.max_blocks, depth=args.md_depth)
         except KeyboardInterrupt:
             raise
         except Exception as e:
@@ -809,6 +1022,10 @@ def main():
                     initial_backoff=args.openai_initial_backoff,
                     max_backoff=args.openai_max_backoff,
                     min_interval=args.min_ai_interval,
+                    summary_lang=args.summary_lang,
+                    chunk_threshold=args.openai_chunk_threshold,
+                    chunk_size=args.openai_chunk_size,
+                    chunk_overlap=args.openai_chunk_overlap,
                 )
                 perf_flag = ai["perf_flag"]
                 importance = ai["importance"]
@@ -889,8 +1106,14 @@ def main():
         # 진행 로그/자동 저장
         if args.progress_every and (processed % args.progress_every == 0):
             log(f"[진행] {processed}/{len(targets)}")
+        # 행 기준
         if args.autosave_every and (written_since_autosave >= args.autosave_every):
-            flush("자동 저장")
+            flush("자동 저장(행 기준)")
+            last_autosave_ts = time.time()
+        # 시간 기준
+        if args.autosave_interval_seconds and (time.time() - last_autosave_ts >= args.autosave_interval_seconds):
+            flush("자동 저장(주기 기준)")
+            last_autosave_ts = time.time()
 
     # 마지막 저장
     flush("최종 저장")
