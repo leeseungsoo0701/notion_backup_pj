@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.leeseungsoo.notion_scanner</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>"$HOME"/Desktop/notion_backup_0907/scripts/run_scanner_loop.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>$HOME/Desktop/notion_backup_0907</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Background</string>
+
+  <key>StandardOutPath</key>
+  <string>$HOME/Desktop/notion_backup_0907/out/scan.log</string>
+  <key>StandardErrorPath</key>
+  <string>$HOME/Desktop/notion_backup_0907/out/scan.err.log</string>
+</dict>
+</plist>

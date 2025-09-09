@@ -1,0 +1,63 @@
+/Users/seungsoo/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+시작: 전체 4029건 / 처리대상 4029건 (resume=OFF, overwrite=ON)
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=ccb3d285-1d36-464b-8d9c-c7dbaed4850e imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=2c10abcd-63ff-4b0d-a5f9-e392880ac084 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=692ff0ad-f400-477a-990d-0f53cb9356d2 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=f13ff966-3b23-4136-a8ad-b7666308cc4f imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=67c9ba30-25ed-4cd8-b1eb-23a245e44db7 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=83db99c7-f796-43b2-865e-2a1a2f80d9e0 imp=4 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=0fb737e9-1289-4c10-8c55-7c5829c4cfbf imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=cda42718-1998-457e-a06d-bfd6a574a3d4 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=edeaeec5-d65c-4517-b54e-18b1b859c418 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=9a4d9df5-179a-4de8-9e33-b6b2d2544700 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=f0355372-1d34-44a5-9460-490c6820e4b0 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=27d5ada0-2022-428f-aacb-22607149eb8a imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=c741fcdb-7c54-4dca-8dbe-cdabb8488830 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=27999ce7-0623-461e-b8c8-b7ea3d58b14d imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=c819ea9c-b44e-4f11-850c-15e9578254bc imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=68c6f3bf-e011-4935-9ce1-04294f4cddf2 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=ee0777c0-c3d9-45fe-8c30-620a5b0d5b70 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=366efe26-a9b7-417a-81c7-c98f0295fbd7 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=1d7fe5e5-0d86-4403-997c-99cb9ae72a6f imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=ab76dd17-7846-44ca-ae00-3dd9afb53fc9 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=0ef97e49-4c6c-48b7-94e8-abf2b073e6dd imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=b33e1036-7940-4a4c-8c70-bcd94d583703 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=dd4d798a-a2bd-4d8d-8026-3d668effa9a7 imp=5 perf=yes
+[AI-ERROR] RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+[LOCAL-FB] OpenAI 실패 → 로컬 요약 사용 id=d80d0f73-4036-41ca-ad08-67fb0024fb59 imp=5 perf=yes
+[저장] 자동 저장(주기 기준) → /Users/seungsoo/Desktop/notion_backup_0907/out/manifest_ai_enriched.csv

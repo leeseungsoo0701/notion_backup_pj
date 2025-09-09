@@ -22,6 +22,7 @@ import signal
 import re
 from typing import Dict, List, Set, Optional, Tuple
 from datetime import datetime
+import shutil
 
 import requests
 import subprocess
@@ -841,6 +842,23 @@ def append_result(path: str, rows: List[dict]):
                 r["summary_5lines"],
             ])
 
+def backup_existing_output(path: str) -> Optional[str]:
+    """If output exists and is non-empty, create a timestamped .bak copy next to it."""
+    try:
+        if path and os.path.exists(path) and os.path.getsize(path) > 0:
+            d = os.path.dirname(path) or "."
+            base = os.path.basename(path)
+            name, ext = os.path.splitext(base)
+            ts = datetime.now().strftime("%Y%m%d-%H%M%S")
+            bak = os.path.join(d, f"{name}.bak-{ts}{ext}")
+            os.makedirs(d, exist_ok=True)
+            shutil.copy2(path, bak)
+            log(f"[백업] 기존 출력 백업 → {bak}")
+            return bak
+    except Exception as e:
+        append_failure(FAIL_LOG, f"백업 실패: {type(e).__name__}: {e}", {"path": path})
+    return None
+
 # -------------------- 메인 --------------------
 def main():
     import argparse
@@ -925,6 +943,8 @@ def main():
     in_rows = read_input(args.input)
 
     if args.overwrite and os.path.exists(args.output):
+        # 안전을 위해 덮어쓰기 전에 자동 백업 생성
+        backup_existing_output(args.output)
         os.remove(args.output)
     ensure_header(args.output)
 
