@@ -417,63 +417,154 @@ def summarize_locally(markdown_text: str, title: str, created_date: str, url: st
     top_lines = (top_lines + [""]*5)[:5]
 
     return {"perf_flag": perf_flag, "importance": importance, "summary_5lines": top_lines}
+def _apply_annotations(text: str, ann: dict) -> str:
+    """Apply basic Markdown annotations (bold/italic/strikethrough/code)."""
+    if not text:
+        return text
+    try:
+        if ann.get("code"):
+            text = f"`{text}`"
+        # Order: bold outside italic to avoid nesting issues
+        if ann.get("bold"):
+            text = f"**{text}**"
+        if ann.get("italic"):
+            text = f"*{text}*"
+        if ann.get("strikethrough"):
+            text = f"~~{text}~~"
+        # Underline not standard in MD; skip or use HTML
+        # if ann.get("underline"):
+        #     text = f"<u>{text}</u>"
+    except Exception:
+        pass
+    return text
+
+
 def _rich_text_to_plain(rt_arr: list) -> str:
     buf = []
     for o in rt_arr or []:
         t = o.get("type")
         if t == "text":
-            buf.append(o.get("text", {}).get("content", ""))
+            text = (o.get("text", {}) or {}).get("content", "")
+            href = (o.get("text", {}) or {}).get("link", {}) or {}
+            url = href.get("url") if isinstance(href, dict) else None
+            text = _apply_annotations(text, o.get("annotations", {}) or {})
+            if url:
+                buf.append(f"[{text}]({url})" if text else url)
+            else:
+                buf.append(text)
         elif t == "mention":
             m = o.get("mention", {}) or {}
             if m.get("type") == "user":
                 name = (m.get("user", {}) or {}).get("name", "")
-                buf.append(f"@{name}" if name else "@user")
+                name = name or "user"
+                s = f"@{name}"
+            elif m.get("type") == "date":
+                d = m.get("date", {}) or {}
+                s = d.get("start") or d.get("end") or "@date"
             else:
-                buf.append("@mention")
+                s = "@mention"
+            s = _apply_annotations(s, o.get("annotations", {}) or {})
+            buf.append(s)
         elif t == "equation":
-            buf.append(o.get("equation", {}).get("expression", ""))
+            expr = (o.get("equation", {}) or {}).get("expression", "")
+            buf.append(f"$ {expr} $")
     return "".join(buf)
 
-def block_to_md(block: dict) -> str:
+def _image_url_from_block(b: dict) -> str:
+    try:
+        if b.get("type") == "image":
+            img = b.get("image") or {}
+            t = img.get("type")
+            if t == "external":
+                return (img.get("external") or {}).get("url", "")
+            if t == "file":
+                return (img.get("file") or {}).get("url", "")
+    except Exception:
+        pass
+    return ""
+
+
+def block_to_md(block: dict, indent: int = 0) -> str:
     t = block.get("type")
     b = block.get(t) or {}
+    ind = "  " * max(0, int(indent))
+
     if t == "paragraph":
-        return _rich_text_to_plain(b.get("rich_text"))
+        txt = _rich_text_to_plain(b.get("rich_text"))
+        return f"{ind}{txt}" if txt else ""
     if t in ("heading_1", "heading_2", "heading_3"):
         hashes = {"heading_1": "#", "heading_2": "##", "heading_3": "###"}[t]
         return f"{hashes} {_rich_text_to_plain(b.get('rich_text'))}"
     if t in ("bulleted_list_item", "numbered_list_item"):
         prefix = "-" if t == "bulleted_list_item" else "1."
-        return f"{prefix} {_rich_text_to_plain(b.get('rich_text'))}"
+        return f"{ind}{prefix} {_rich_text_to_plain(b.get('rich_text'))}"
     if t == "to_do":
         chk = "[x]" if b.get("checked") else "[ ]"
-        return f"- {chk} {_rich_text_to_plain(b.get('rich_text'))}"
+        return f"{ind}- {chk} {_rich_text_to_plain(b.get('rich_text'))}"
     if t == "quote":
-        return f"> {_rich_text_to_plain(b.get('rich_text'))}"
+        return f"{ind}> {_rich_text_to_plain(b.get('rich_text'))}"
     if t == "callout":
-        return f"> 💡 {_rich_text_to_plain(b.get('rich_text'))}"
+        return f"{ind}> 💡 {_rich_text_to_plain(b.get('rich_text'))}"
     if t == "code":
         lang = b.get("language") or ""
         txt = _rich_text_to_plain(b.get("rich_text"))
-        return f"```{lang}\n{txt}\n```"
+        # indent code block inside lists by adding indent to each line
+        code_lines = (txt or "").splitlines() or [""]
+        code = "\n".join(f"{ind}{line}" for line in code_lines)
+        return f"{ind}```{lang}\n{code}\n{ind}```"
     if t == "divider":
-        return "---"
+        return f"{ind}---"
     if t == "bookmark":
         url = b.get("url", "")
         cap = _rich_text_to_plain(b.get("caption") or [])
-        return f"[{cap or url}]({url})" if url else cap
+        return f"{ind}[{cap or url}]({url})" if url else (ind + cap)
     if t == "image":
-        cap = _rich_text_to_plain(b.get("caption") or [])
-        return f"![image]({cap})" if cap else "![image]"
+        # Output plain URL only (avoid broken embeds on import)
+        url = _image_url_from_block({"type": t, t: b})
+        return f"{ind}{url}" if url else ""
+    if t == "toggle":
+        # Simulate toggle using a marker; children will be indented one level deeper
+        return f"{ind}- ▶ {_rich_text_to_plain(b.get('rich_text'))}"
     # child_page/child_database 등은 상위에서 별도로 순회하므로 스킵
     return ""
+
+def _table_block_to_md(table_block_id: str) -> str:
+    """Render a Notion 'table' block (with table_row children) into Markdown table."""
+    # Fetch children rows
+    data = blocks_children(table_block_id, start_cursor=None, page_size=100)
+    results = data.get("results", [])
+    rows: list[list[str]] = []
+    for r in results:
+        if r.get("type") != "table_row":
+            continue
+        cells = (r.get("table_row") or {}).get("cells", [])
+        row_texts: list[str] = []
+        for cell in cells:
+            # cell is a list of rich_text
+            row_texts.append(_rich_text_to_plain(cell))
+        rows.append(row_texts)
+    if not rows:
+        return ""
+    # If first row looks like header, use it; otherwise synthesize headers
+    header = rows[0]
+    # Build table
+    cols = max(len(r) for r in rows)
+    def pad(r):
+        return r + [""] * (cols - len(r))
+    md = []
+    md.append("| " + " | ".join(pad(header)) + " |")
+    md.append("| " + " | ".join(["---"] * cols) + " |")
+    for r in rows[1:]:
+        md.append("| " + " | ".join(pad(r)) + " |")
+    return "\n".join(md)
+
 
 def get_page_markdown(page_id: str, max_blocks: int = 2000, depth: int = 2) -> str:
     """첫 max_blocks 만큼 children을 depth 단계까지 Markdown으로 결합"""
     lines: List[str] = []
     scanned = 0
 
-    def walk(parent_id: str, cur_depth: int, cursor: Optional[str] = None):
+    def walk(parent_id: str, cur_depth: int, cursor: Optional[str] = None, indent: int = 0):
         nonlocal scanned, lines
         if scanned >= max_blocks:
             return
@@ -482,20 +573,39 @@ def get_page_markdown(page_id: str, max_blocks: int = 2000, depth: int = 2) -> s
         for blk in results:
             if scanned >= max_blocks:
                 break
-            md = block_to_md(blk)
+            btype = blk.get("type")
+            if btype == "table":
+                try:
+                    md = _table_block_to_md(blk.get("id"))
+                except Exception:
+                    md = ""
+            else:
+                md = block_to_md(blk, indent=indent)
             if md:
                 lines.append(md)
             scanned += 1
             if cur_depth > 1 and blk.get("has_children"):
                 try:
-                    walk(blk.get("id"), cur_depth - 1, None)
+                    # Increase indent level for child blocks to preserve hierarchy (lists/toggles)
+                    walk(blk.get("id"), cur_depth - 1, None, indent=indent + 1)
                 except Exception:
                     pass
         if data.get("has_more") and scanned < max_blocks:
-            walk(parent_id, cur_depth, data.get("next_cursor"))
+            walk(parent_id, cur_depth, data.get("next_cursor"), indent=indent)
 
     walk(page_id, max(1, int(depth)))
-    return "\n".join(lines).strip()
+    # Post-process: ensure single blank line between top-level blocks for readability, but keep list adjacency
+    out: list[str] = []
+    prev = ""
+    for ln in lines:
+        if not ln:
+            continue
+        # Insert blank line before headings/dividers if previous line isn't blank
+        if (ln.startswith("# ") or ln.startswith("## ") or ln.startswith("### ") or ln.strip() == "---") and (prev and prev.strip() != ""):
+            out.append("")
+        out.append(ln)
+        prev = ln
+    return "\n".join(out).strip()
 
 # -------------------- OpenAI --------------------
 # pip install openai

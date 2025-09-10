@@ -8118,3 +8118,287 @@
 {"ts": "2025-09-09 20:19:46", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "2682dc3e-f514-8089-8a95-e437a60f92dd"}}
 {"ts": "2025-09-09 20:19:49", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "2682dc3e-f514-80e9-bb84-c0c027442fef"}}
 {"ts": "2025-09-09 20:19:52", "message": "OpenAI 실패: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}", "context": {"id": "2682dc3e-f514-8046-9598-f4fe0cb2ac47"}}
+{"ts": "2025-09-10 15:37:20", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:37:26", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:37:56", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:37:58", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:01", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:04", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:07", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:12", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:20", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:20", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:24", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:38:32", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:39:44", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:41:39", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:41:51", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:41:54", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:41:55", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:42:05", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:42:07", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:42:43", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:46:49", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:46:50", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:09", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:10", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:16", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:17", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:20", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:29", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:51", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:47:52", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:48:06", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:48:13", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:48:20", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:48:22", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:48:29", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:48:33", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:49:35", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:51:30", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:51:47", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:51:52", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:51:52", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:52:00", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:52:03", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:52:33", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:54:01", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:54:13", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:54:16", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:54:28", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:54:49", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:54:56", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:55:12", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:55:14", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 15:55:39", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:23:44", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:23:47", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:05", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:07", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:10", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:11", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:16", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:21", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:31", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:32", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:33", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:24:35", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:25:36", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:02", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:04", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:14", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:16", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:17", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:20", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:21", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:22", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:25", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:29", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:30", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:27:35", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:28:07", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:28:08", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:29:54", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:06", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:09", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:10", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:23", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:33", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:36", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:30:40", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:31:15", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:31:46", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:31:49", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:00", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:01", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:03", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:09", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:09", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:12", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:28", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:31", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:49", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:54", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:32:59", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:33:00", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:33:07", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:33:13", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:34:05", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:35:49", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:36:01", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:36:02", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:36:04", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:36:07", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:36:08", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:36:36", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:38:12", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:38:29", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:38:42", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:38:43", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:38:59", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:39:14", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:39:25", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:39:27", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:40:00", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:56:37", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:56:47", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 16:57:35", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 17:00:23", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 17:00:48", "message": "DB 아님 또는 권한 없음: ecdd6ecd-d85d-41bb-8e61-5d0e13134858"}
+{"ts": "2025-09-10 17:00:54", "message": "DB 아님 또는 권한 없음: a9d433fa-bce9-4271-8646-55cac6f5883e"}
+{"ts": "2025-09-10 17:01:29", "message": "DB 아님 또는 권한 없음: b12a2d34-dcd8-4cdd-a7c1-ee2ff1ff100d"}
+{"ts": "2025-09-10 17:01:36", "message": "DB 아님 또는 권한 없음: a313ff4b-5641-4464-89ff-1d7f9af8f0f0"}
+{"ts": "2025-09-10 17:01:36", "message": "DB 아님 또는 권한 없음: 12244a7f-6f97-45bb-ab84-cd9dc8e9a828"}
+{"ts": "2025-09-10 17:01:45", "message": "DB 아님 또는 권한 없음: 1676325d-20cf-497a-8f2c-6242e9088f4a"}
+{"ts": "2025-09-10 17:01:50", "message": "/databases/ecdd6ecd-d85d-41bb-8e61-5d0e13134858 실패 status=400"}
+{"ts": "2025-09-10 17:01:54", "message": "/databases/a9d433fa-bce9-4271-8646-55cac6f5883e 실패 status=400"}
+{"ts": "2025-09-10 17:03:22", "message": "/databases/b12a2d34-dcd8-4cdd-a7c1-ee2ff1ff100d 실패 status=400"}
+{"ts": "2025-09-10 17:03:38", "message": "/databases/a313ff4b-5641-4464-89ff-1d7f9af8f0f0 실패 status=400"}
+{"ts": "2025-09-10 17:03:38", "message": "/databases/12244a7f-6f97-45bb-ab84-cd9dc8e9a828 실패 status=400"}
+{"ts": "2025-09-10 17:04:01", "message": "/databases/1676325d-20cf-497a-8f2c-6242e9088f4a 실패 status=400"}
+{"ts": "2025-09-10 17:09:02", "message": "Export failed: https://www.notion.so/f13ff9663b234136a8adb7666308cc4f"}
+{"ts": "2025-09-10 17:09:03", "message": "Export failed: https://www.notion.so/23-01-10-67c9ba3025ed4cd8b1eb23a245e44db7"}
+{"ts": "2025-09-10 17:40:39", "message": "Export failed: https://www.notion.so/23-01-10-67c9ba3025ed4cd8b1eb23a245e44db7"}
+{"ts": "2025-09-10 19:42:10", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:15", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:34", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:36", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:38", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:39", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:40", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:42", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:48", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:49", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:52", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:42:57", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:43:52", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:45:03", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:45:14", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:45:19", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:45:20", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:45:25", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:45:27", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:46:00", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:48:46", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:48:47", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:07", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:07", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:10", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:12", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:13", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:21", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:36", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:37", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:46", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:49", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:55", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:57", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:49:59", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:50:11", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:51:07", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:52:36", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:52:44", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:52:47", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:52:48", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:52:51", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:52:52", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:53:10", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:54:26", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:54:30", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:54:35", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:54:39", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:54:50", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:54:57", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:55:01", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:55:03", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 19:55:27", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:19:58", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:20:09", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:20:11", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:20:12", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:20:26", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:20:27", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:20:47", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:14", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:21", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:31", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:32", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:46", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:52", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:22:57", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:23:00", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:23:28", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:40:44", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:40:50", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:07", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:07", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:11", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:15", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:16", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:22", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:26", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:27", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:32", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:41:36", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:42:38", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:01", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:09", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:11", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:12", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:15", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:16", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:44:52", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:47:51", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:47:53", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:04", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:05", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:08", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:09", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:10", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:13", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:24", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:26", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:36", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:41", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:46", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:47", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:49", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:48:58", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:49:54", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:16", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:22", "message": "/blocks/2d94283c-d90a-47c3-9c17-323efb3f2903/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:30", "message": "/blocks/aaa73bdd-8906-4a13-a13b-7281f6b4fe84/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:33", "message": "/blocks/b3d46571-a12c-4d98-8c92-2c6ded54622a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:34", "message": "/blocks/14b338b7-7d24-41d7-87eb-1a90b76eb28e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:34", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:37", "message": "/blocks/8d436595-5e5a-4280-8061-61de235fb04a/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:51:39", "message": "/blocks/35ef687e-5290-4c16-a1ea-c1bcd13c8134/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:52:07", "message": "/blocks/61781b23-d88c-4693-b1f3-cd965356f979/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:52:12", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:53:41", "message": "/blocks/3fa4c46f-7dad-4943-9898-3c47d8fe7045/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:53:48", "message": "/blocks/92cd7708-a947-4901-9c2d-939c589be229/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:53:57", "message": "/blocks/04ef4f30-6ae3-4a66-a50a-0d94ab4d8d51/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:53:59", "message": "/blocks/a3dabeaa-7748-4f84-9983-2c436a2146e3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:54:08", "message": "/blocks/2dfe6bfe-443d-438b-9e76-f31deeaa9154/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:54:18", "message": "/blocks/c9aac07f-5aa8-4de2-813d-fd8812c04e1e/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:54:25", "message": "/blocks/c997cfcb-7408-459c-b961-f6c491da980b/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:54:26", "message": "/blocks/f7c96f6c-5c38-494a-b190-0c00d8e6cb14/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:54:28", "message": "/blocks/b03ea473-42d6-47ed-9fdb-fb20606ee248/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:55:01", "message": "/blocks/1546bed9-aa84-4de6-91d8-720db71e1ae3/children 404 → 삭제/권한/잘못된ID 가능. URL/권한 확인 필요"}
+{"ts": "2025-09-10 20:55:11", "message": "DB 아님 또는 권한 없음: a9d433fa-bce9-4271-8646-55cac6f5883e"}
+{"ts": "2025-09-10 20:55:19", "message": "DB 아님 또는 권한 없음: 1676325d-20cf-497a-8f2c-6242e9088f4a"}
+{"ts": "2025-09-10 20:55:35", "message": "DB 아님 또는 권한 없음: ecdd6ecd-d85d-41bb-8e61-5d0e13134858"}
+{"ts": "2025-09-10 20:55:46", "message": "DB 아님 또는 권한 없음: b12a2d34-dcd8-4cdd-a7c1-ee2ff1ff100d"}
+{"ts": "2025-09-10 20:55:49", "message": "DB 아님 또는 권한 없음: a313ff4b-5641-4464-89ff-1d7f9af8f0f0"}
+{"ts": "2025-09-10 20:56:00", "message": "DB 아님 또는 권한 없음: 12244a7f-6f97-45bb-ab84-cd9dc8e9a828"}
+{"ts": "2025-09-10 20:56:32", "message": "/databases/a9d433fa-bce9-4271-8646-55cac6f5883e 실패 status=400"}
+{"ts": "2025-09-10 20:56:32", "message": "/databases/a9d433fa-bce9-4271-8646-55cac6f5883e/query 400 → DB 아님(링크드/뷰/페이지?) 또는 요청 형식 문제. 정규화 시도 필요", "context": {"payload": {"page_size": 100}}}
+{"ts": "2025-09-10 20:56:46", "message": "/databases/1676325d-20cf-497a-8f2c-6242e9088f4a 실패 status=400"}
+{"ts": "2025-09-10 20:56:46", "message": "/databases/1676325d-20cf-497a-8f2c-6242e9088f4a/query 실패 status=404", "context": {"payload": {"page_size": 100}}}
+{"ts": "2025-09-10 20:57:05", "message": "/databases/ecdd6ecd-d85d-41bb-8e61-5d0e13134858 실패 status=400"}
+{"ts": "2025-09-10 20:57:05", "message": "/databases/ecdd6ecd-d85d-41bb-8e61-5d0e13134858/query 400 → DB 아님(링크드/뷰/페이지?) 또는 요청 형식 문제. 정규화 시도 필요", "context": {"payload": {"page_size": 100}}}
+{"ts": "2025-09-10 20:57:17", "message": "/databases/b12a2d34-dcd8-4cdd-a7c1-ee2ff1ff100d 실패 status=400"}
+{"ts": "2025-09-10 20:57:23", "message": "/databases/a313ff4b-5641-4464-89ff-1d7f9af8f0f0 실패 status=400"}
+{"ts": "2025-09-10 20:57:24", "message": "/databases/a313ff4b-5641-4464-89ff-1d7f9af8f0f0/query 400 → DB 아님(링크드/뷰/페이지?) 또는 요청 형식 문제. 정규화 시도 필요", "context": {"payload": {"page_size": 100}}}
+{"ts": "2025-09-10 20:58:17", "message": "/databases/12244a7f-6f97-45bb-ab84-cd9dc8e9a828 실패 status=400"}
+{"ts": "2025-09-10 20:58:18", "message": "/databases/12244a7f-6f97-45bb-ab84-cd9dc8e9a828/query 400 → DB 아님(링크드/뷰/페이지?) 또는 요청 형식 문제. 정규화 시도 필요", "context": {"payload": {"page_size": 100}}}
