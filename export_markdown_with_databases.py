@@ -64,6 +64,15 @@ def sanitize_filename(name: str) -> str:
     return s[:120].strip() or "untitled"
 
 
+def expected_output_path(created_date: str, title: str, url: str, out_dir: Path) -> Optional[Path]:
+    pid_raw = url_to_page_id(url or "")
+    if not pid_raw:
+        return None
+    display_title = f"{(created_date or '').strip()}_{(title or '').strip()}".strip("_")
+    fname = f"{sanitize_filename(display_title)}__{pid_raw[:8]}.md"
+    return out_dir / fname
+
+
 def property_value_to_text(prop: dict) -> str:
     t = prop.get("type")
     if t in ("title", "rich_text"):
@@ -307,6 +316,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--md-depth", type=int, default=3, help="Markdown children depth (default 3)")
     p.add_argument("--max-blocks", type=int, default=3000, help="Max blocks to scan per page")
     p.add_argument("--db-max-rows", type=int, default=500, help="Max rows per database table")
+    p.add_argument("--skip-existing", action="store_true", default=True, help="Skip if target .md already exists")
+    p.add_argument("--no-skip-existing", dest="skip_existing", action="store_false", help="Do not skip existing outputs")
     return p.parse_args()
 
 
@@ -349,6 +360,14 @@ def main() -> None:
         summary = (row.get("summary_5lines") or "").strip()
         if not url:
             continue
+        # Skip if output already exists (for resumable runs)
+        if args.skip_existing:
+            maybe = expected_output_path(created_date, title, url, out_dir)
+            if maybe and maybe.exists() and maybe.stat().st_size > 0:
+                em.log(f"[{idx}/{len(sel)}] ↷ skip existing → {maybe}")
+                done += 1
+                continue
+
         try:
             out_path = export_page_with_databases(
                 url, out_dir,

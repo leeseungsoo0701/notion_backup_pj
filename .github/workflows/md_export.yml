@@ -1,0 +1,53 @@
+name: Notion Markdown Export
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 18 * * *'  # daily at 03:00 KST (18:00 UTC)
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests openai
+
+      - name: Run exporter (skip existing)
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: |
+          python export_markdown_with_databases.py \
+            -i out/manifest_ai_enriched_filtered_strict.csv \
+            -o out/md_export \
+            --md-depth 3 \
+            --max-blocks 3000 \
+            --db-max-rows 500 \
+            --skip-existing
+
+      - name: Commit and push results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add out/md_export || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(ci): update md export outputs"
+            git push
+          fi
+
