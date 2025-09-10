@@ -25,29 +25,47 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests openai
 
-      - name: Run exporter (skip existing)
+      - name: Chunked export with auto-commit
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-        run: |
-          python export_markdown_with_databases.py \
-            -i out/manifest_ai_enriched_filtered_strict.csv \
-            -o out/md_export \
-            --md-depth 3 \
-            --max-blocks 3000 \
-            --db-max-rows 500 \
-            --skip-existing
-
-      - name: Commit and push results
-        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add out/md_export || true
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore(ci): update md export outputs"
-            git push
+
+          INPUT=out/manifest_ai_enriched_filtered_strict.csv
+          CHUNK_SIZE=200   # adjust if needed
+          MD_DEPTH=3
+          MAX_BLOCKS=3000
+          DB_MAX_ROWS=500
+
+          TOTAL=$(($(wc -l < "$INPUT")-1))
+          if [ "$TOTAL" -lt 1 ]; then
+            echo "No data rows in $INPUT"; exit 0
           fi
+          echo "Total rows: $TOTAL; chunk size: $CHUNK_SIZE"
+
+          SKIP=0
+          while [ $SKIP -lt $TOTAL ]; do
+            echo "--- Chunk: skip=$SKIP, limit=$CHUNK_SIZE ---"
+            python export_markdown_with_databases.py \
+              -i "$INPUT" \
+              -o out/md_export \
+              --md-depth $MD_DEPTH \
+              --max-blocks $MAX_BLOCKS \
+              --db-max-rows $DB_MAX_ROWS \
+              --skip $SKIP -n $CHUNK_SIZE \
+              --skip-existing || true
+
+            git add out/md_export || true
+            if git diff --cached --quiet; then
+              echo "No new files for this chunk"
+            else
+              git commit -m "chore(ci): md export chunk (skip=$SKIP, limit=$CHUNK_SIZE)"
+              git push
+            fi
+
+            SKIP=$((SKIP+CHUNK_SIZE))
+          done
 
