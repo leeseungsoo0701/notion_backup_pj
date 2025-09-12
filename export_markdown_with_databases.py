@@ -21,6 +21,7 @@ import csv
 import os
 import re
 from pathlib import Path
+import glob
 from typing import Dict, List, Optional, Tuple
 
 # Reuse Notion API helpers and Markdown conversion
@@ -71,6 +72,24 @@ def expected_output_path(created_date: str, title: str, url: str, out_dir: Path)
     display_title = f"{(created_date or '').strip()}_{(title or '').strip()}".strip("_")
     fname = f"{sanitize_filename(display_title)}__{pid_raw[:8]}.md"
     return out_dir / fname
+
+
+def any_existing_output_for_url(url: str, out_dir: Path) -> bool:
+    """Return True if any output file for the page id already exists in out_dir.
+
+    Uses the 8-char page id suffix pattern `*__{pid8}.md` to avoid false negatives
+    when title or created_date change between runs.
+    """
+    pid_raw = url_to_page_id(url or "")
+    if not pid_raw:
+        return False
+    pid8 = pid_raw[:8]
+    pattern = str(out_dir / f"*__{pid8}.md")
+    try:
+        matches = glob.glob(pattern)
+        return any(Path(m).is_file() and Path(m).stat().st_size > 0 for m in matches)
+    except Exception:
+        return False
 
 
 def property_value_to_text(prop: dict) -> str:
@@ -362,6 +381,12 @@ def main() -> None:
             continue
         # Skip if output already exists (for resumable runs)
         if args.skip_existing:
+            # Robust check: any file for the same page id
+            if any_existing_output_for_url(url, out_dir):
+                em.log(f"[{idx}/{len(sel)}] ↷ skip existing (by page id)")
+                done += 1
+                continue
+            # Fallback: exact expected path match
             maybe = expected_output_path(created_date, title, url, out_dir)
             if maybe and maybe.exists() and maybe.stat().st_size > 0:
                 em.log(f"[{idx}/{len(sel)}] ↷ skip existing → {maybe}")
