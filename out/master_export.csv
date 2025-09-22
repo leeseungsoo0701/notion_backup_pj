@@ -1,0 +1,471 @@
+record_type,created_date,title,id,url,importance,perf_flag,summary_5lines,markdown,source_db_id,source_db_title,properties_json
+page,2023-01-03,2023-01-03_[23/01/03] 내일배움캠프 모집 킥오프,ccb3d285-1d36-464b-8d9c-c7dbaed4850e,https://www.notion.so/23-01-03-ccb3d2851d36464b8d9cc7dbaed4850e,5,yes,"[1] 훨씬 깔끔하고, 널처링 할 수 있는 퍼널
+지원 퍼널
+지원퍼널 nurturing
+지난기수 문제:
+내부 모집마감 목표: 2월 14일(화)","# 00. 지난 회고 내용 참고
+- ▶ 회고록 내용
+  - `P0` 다음 모집 일정 찍기
+  - `P0` SEO되게 하기 위해서 영상 후기나 글 컨텐츠 Seeding.
+    - 취업생 영상/글 인터뷰 @최양임(PM팀) 
+    - 블로그 후기 SEO 잘 잡히게. ~~수료/취업한 사람 앉혀놓고 후기쓰기~~ @최양임(PM팀) 
+    - 튜터님 인터뷰 촬영. 스펙 이력 좋은 분. @user 
+  - 마케팅 관점
+    - 내일배움캠프 후기, 합격, 불합격 키워드 먹는 콘텐츠 작업 필요
+    - 내배캠 수강생, 수료생 연락 → 후기 콘텐츠 제작
+    - Non-BAU 매체 효과적. 버티컬 매체 부킹 (ex. 백준, 부트텐트 등)
+    - CRM 모수 구매 (ex. 카드사 모수 - 내일배움카드 소지자) 
+  - UI/UX 관점 (랜딩/지원 페이지)
+    - (랜딩) Oopy goodbye. 타이머/실시간 정원 마감 등.
+    - **(랜딩) 국비지원 인식을 깰 수 있을 만한 포인트 어필 **
+    - **(CRM) 선발 과정 등 정보 명확히 전달. 숙지하고 있지 못한 사람 다수.**
+    - **(지원 페이지/CRM) ”지원 완료되었습니다” 등 고객 상태와 CTA 명확하게**
+  - 지원 퍼널
+    - 지원 단계에서 더 널처링 해야함
+    - 전환 시, 가장 유효했던 액션
+  - 합류 후 이탈 방지
+    - **아쉬운 점 : 이탈 방지 액션이 모집 후반에 시작됨 **
+    - 트랙을 미리 선택하게 해서, TO에 맞춰서 액션 짜기 (트랙별 튜터님의 세션)
+    - 내일배움캠프 사전스터디 시스템 가져가기.
+
+# 1. 회의 내용
+
+### 1) 모집 계획
+- 총 모집 인원 & 코스 : 명
+  - AI: 연간 100명 (+50명) // 회당 100명
+    - 즉, 상반기 100명 + 하반기에 잘하면 50명 더 
+    - 2월 개강 가능
+  - React / Node.js / Spring : 연간 200명 (+100명) // 회당 100명
+    - 즉, 상반기 100명 + 하반기에 못해도 100명 or 잘하면 200명 더
+    - 4월 개강 가능
+- 2월 모집 트랙/명 수
+  - 모집 시작 날짜 : 2월 6일(월) `AI 트랙부터`
+    - 사전설명회 1차 : 2월 6일(월) (신청자 + 스파코 CRM + paid 광고) - 강사 : 
+    - 사전설명회 2차: 2월 13일(월) 
+  - 내부 모집마감 목표: 2월 14일(화)
+  - 1차 모집 마감(공지): 2월 16일(목) 
+  - 2차 모집 마감(Hard): 2월 27일(월) 
+  - 개강 날짜: 3월 6일(월) 
+
+### 2) 모집 준비
+- 내배캠만의 특장점(USP) 3가지.
+  - Main) 국비지원 개발자 취업은 내일배움캠프. 취업률 84%(국비 평균 47%)
+    1. 수료율 100% - 100%라는 숫자가 위험할 수도 있지 않을까요?(실제 최근 과정 74명 중 72명 수료-97.4%)
+    1. 1,000 여곳의 협력사 (자체 채용 플랫폼)
+    1. 사전 스터디
+  - BX
+    - 기존 랜딩 페이지 기획안
+    - 스카우트 컨셉 유지할지?
+- 랜딩페이지 제작 타임라인
+  - ▶ 현재 우피 메인 페이지
+    우피 링크: [https://nbcamp.spartacodingclub.kr/](https://nbcamp.spartacodingclub.kr/)
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/8840bc06-2afe-402d-8a34-aa674beba320/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-01-03_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_6.34.48.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666R6ZMAJC%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073548Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIE0saQTAv76EhCA1RMFYI7c8eJRMpweA50tgxH5HW9PEAiBbd0RsGwmLQV%2BM7e2xF1E10EzA4L2a1xqeVjyTVk5cjCr%2FAwgoEAAaDDYzNzQyMzE4MzgwNSIMndx4kXn8hPGGyVDFKtwDOQIZD7lLcPRF5X52ErxGzSd0ys60GlvSURIizl3zA4XL9MP7kQu8XLMxyW21InZoKmYRR3TLNLvizLXDJf%2Fm9UFFuODq7DzyRvgcf1Ukr4P9ZyfbvXpD8%2FkRW7%2FqGQ3Fm6kPtZPAcKYdAAyl4LLfZZh9jR%2Be%2BWSYcMnvkOs1PNg6MzFCftge5%2F9UOmnMLcVBIPIkJYxHlgHyYFqNUt%2BLk2a2bypwwEvu6BAdPKBW2tYwOCN4W6AjcQ0TPT2otiAaWjsDiV02pYiJlU%2Bzgk7pKnxhONEaRDHdofSOoq2ld5i%2BMLqol7Tp7C236REL5WJjNMkf%2B%2FNmVcZzIekfXrf2EU8tIipEjKjd8nkCENyPGfqnnMzeDlulr4LTBkG5ypqJ9Obtdq%2FWnh4ZX%2BiSC75eOusGVkh89GmwqdA4RCmirQSQ2ARRuLgKFNJ%2BcA%2BWoa8lbqE8apqtgKHSgZ7DaVvsK22mUeUAqr0uBiZwYSxw8gbGHAd2sly2lPUgUd4pT5fl0KGotn8x0gdRzvfN6OImYXOVpR%2FphBxMgXsdG%2B3SBD04Smg8DsUQA%2FUa9gas1Iiv2MIQm3iDFoAAgHzSiQwZH4KonDygk%2FuN%2BywefJSmq0jZnZon3D52q5yrDuMw8d%2FDxgY6pgHS6Q8H%2B4iXzmgHTmUg4nnAk2ahSgRk%2FHPhTfMgEMpCPDTfBI%2BEa6Vir7w9q4rb%2B4Im2yvyMOVcvY1%2BnIE5NVN4Ad9h1D8D95Pd22phU8G0RsMNsE5VjakLkFlQhbsaCvzQ4jiVN%2B9WhwtWQb%2Fcu3kaXSlwikbVcZDudfDGkgxNxrOaymedf3y3NB65812E7Yj%2B9idNRxFjRDPf9Q8PaaouesMdeZhg&X-Amz-Signature=d6de132621bcc99dac6c002087621b19d411aff20714e2e02856301c29cc9e30&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+    - 상단 GNB (절차/FAQ, 커리큘럼)
+    - 하단 floating CTA
+    - 문의하기 버튼
+  - 통일된 네러티브로 제작하여 기수가 변경되어 과목이 바뀌더라도 해당 부분만 변경할 수 있도록 설계
+  - 신청하기 클릭한 인원 회원가입/로그인을 진행할 것인지?
+- 마케팅 전략 타임라인 (취업생 섭외, 광고 콘텐츠 제작 타임라인)
+  - 빠르게, 항해 카니발 없이 모집.
+  - 모집 전략
+    - 1) CRM
+    - 2) 광고
+- 기타 : 알림신청자 묶어두기 (사전 스터디 미리 시작?) → 알림 신청자 시트 링크
+  - 내일배움단을 들으면 가산점 // 내배단 PM인 성은님한테 오너십 드리면 어떨까.
+    - 서류와 면접전형 가산점
+    - 합격한 인원들 바로 바로 스터디 진행
+  [https://docs.google.com/spreadsheets/d/1R0veQW_IYnVDkkAEL9SFyrvdOTDIn6lapXdulJFC4Rw/edit#gid=1600868655](https://docs.google.com/spreadsheets/d/1R0veQW_IYnVDkkAEL9SFyrvdOTDIn6lapXdulJFC4Rw/edit#gid=1600868655)
+- 지원퍼널 nurturing
+  - 지난기수 문제:
+    - 서류제출 단계에서 구글폼이라 설득될 수 있는 컨텐츠 없었음
+    - 영상 제출 단계에서 이탈율 약 40% 발생 → 후반부에 전화 면접으로 전환율 높였으나 최종 이탈율 높아짐
+    - 합격페이지 없음 - HRD-net에 등록하라는 랜딩페이지
+  - 글 콘텐츠
+- 이탈 방지가 가장 중요
+  - [1] 훨씬 깔끔하고, 널처링 할 수 있는 퍼널
+    - 퍼널의 컴포넌트는 SW캠프/창과 유사하게. BX만 내배캠. 
+    - 영상제출을 Web 내에서. 모바일에서도 쉽게. 
+    - 정책을 빡세게. 
+  - [1] 지속적으로 매력을 소구하는 컨텐츠 공유 
+    - 지원 후 7일간 매일 다른 컨텐츠 LMS로 발송.
+    - 사전 스터디, OT 참석. 
+  - [2] 전반적으로 고객이 느끼는 ‘불확실성’을 제거할 것
+    - HRD-net에 최종 훈련생 등록 빠르게 - 행정등록 미리 해두면 됨
+    - 트랙 선택 빠르게
+
+# 2. 기타 논의사항
+
+# 3. NEXT
+- 다음주 회의 전까지.
+  - 내배캠만의 USP(항해와 카니발 안 나오는 방향으로)
+  -",,,
+page,2023-01-03,2023-01-03_[23/01/04] 부트캠프 통합 블로그 킥오프,2c10abcd-63ff-4b0d-a5f9-e392880ac084,https://www.notion.so/23-01-04-2c10abcd63ff4b0da5f9e392880ac084,5,yes,"이슈 제거 (에디터와 노출의 행간차이, 배포시간 등등)
+P0항해를 기본으로 작업을 해야할 것
+P0(+) 플로팅 버튼이 잘 안보인다.
+P0(+) 공유 버튼 ui → 지금의 스파르타 톤앤매너에 맞추기
+P2(+) 본문 진입 시, 최상단에 해당 게시글의 진입 경로 표기 (노션처럼)","### Agenda.
+1. 무엇을 만들어야 하는가
+  - 블로그 탭
+1. 어떻게 만들어야 하는가
+  - 항해를 참고해서 라이브러리 형태로
+  - 이슈 제거 (에디터와 노출의 행간차이, 배포시간 등등)
+  - 디자인적으로 추가 기능을 붙여서
+1. 언제 만들어야 하는가
+  - 행간 오류잡기 타임라인
+    - 개발 : 민주님, 성택님께서 논의하셔서 공유
+  - 부트캠프 통합 블로그 타임라인
+    - 디자인 : ~ 1/6 (금)
+    - 개발 : 1/9 (월) ~ 1/13(금)
+1. 고려사항은 무엇인가
+  - SW캠프 PM코스
+→ 창으로의 확장
+→ SW캠프 디자인/마케팅 코스로의 확장 (필터나, 카테고리의 교차검색, 검색 기능이 필요할 수 있음)
+
+---
+
+### 디자인적으로 참고해야할 것
+- `P0`항해를 기본으로 작업을 해야할 것
+- `P0`(+) 플로팅 버튼이 잘 안보인다. 
+- `P0`(+) 공유 버튼 ui → 지금의 스파르타 톤앤매너에 맞추기
+- `P1`(+) 본문 진입 시, 최하단에 다른 글로 이동할 수 있는 영역 (스파르타 참고)
+-
+- `P2`(+) 본문 진입 시, 최상단에 해당 게시글의 진입 경로 표기 (노션처럼)
+-
+- `별도로 처리` (+) 행간 오류
+- `별도로 처리` (+) 업로드 시간",,,
+page,2023-01-05,2023-01-05_[23/01/05] 내일배움캠프 랜딩 1차 기획,692ff0ad-f400-477a-990d-0f53cb9356d2,https://www.notion.so/23-01-05-1-692ff0adf400477a990d0f53cb9356d2,5,yes,"div1 (전체 3줄 요약)
+메인 카피 내일배움캠프 3줄 요약
+수료율 + 취업률 (다른 국비지원 지표 함께)
+div8(결과물)
+결과 제시","### 랜딩 페이지 1차 방향 시나리오
+
+---
+> 💡 [전체 내러티브 방향성]
+- Hero Div에서 궁금증 유발 
+- 결과 제시
+- 저 결과는 어떻게 만들어낸 것인지 & 얼마나 대단한 건지 ⇒ 신뢰 획득
+- 이 결과, 당신과 같은 페르소나들에게 나온 결과. ⇒ 관여도 높이기
+- (긴장감 떨어질 때 쯤) 망설이지 않게 한번 더 강조(why pay now)
+- 멋진 이 사람처럼 되려면 어떻게 해야하는지⇒ 전환시키기
+- FAQ
+- ▶ Hero Div (국비지원 취업률 1등 내일배움캠프, 0원으로 개발자 취업할 수 있어요!)
+  - `메인 카피` 국비지원 취업률 1등 내일배움캠프, 0원으로 개발자 취업할 수 있어요!
+  - `서브 카피` 수강료 기존 2000만원 → 0원 + 매월 최대 35만원 훈련장려금.
+  - `비주얼` 개발자 취업률 ~%,(국비지원 평균 ~%)
+- ▶ Div 1 (”내일배움캠프란?”)
+  - `메인 카피` ”내일배움캠프란?”
+  - `서브 카피` 개발자 턱걸이가 아니라 좋은 개발자를 만들어가는 것이 목표다.
+  - `비주얼` 내일배움캠프의 철학 (평등, 도전, 팀워크)
+- ▶ Div 2 (내일배움캠프 3줄 요약)
+  - `메인 카피` 내일배움캠프 3줄 요약
+  - `서브 카피` 취업 지원 프로그램
+  - `비주얼` 탑 클래스 현직 개발자 풀타임, 개발에만 집중할 수 있는, 자체 협력사 1000곳
+- ▶ Div 5 (국비지원 교육, 내일배움캠프는 다릅니다.)
+  - `메인 카피` 국비지원 교육, 내일배움캠프는 다릅니다.
+  - `비주얼` 
+    - 국비지원 들어가도 좋은 곳에 취업 가능할까요?
+    - 수강료가 무료니깐 설렁설렁 가르치지 않을까요?
+    - 지루하고 노후화된 교육방식으로 진행될 것 같아요
+    - 양질의 교육은 모두 수도권에 몰려있던데…
+- ▶ Div 3 (개발자로 취업할 대원을 모집합니다.)
+  - `메인 카피` 개발자로 취업할 대원을 모집합니다.
+  - `비주얼` 모집기간, 수강료, 모집 대상, 개강트랙 및 교육 기간
+- ▶ Div 4 (신청 및 선발 절차)
+  - `메인 카피` 신청 및 선발 절차
+  - `비주얼` 신청접수 및 면접 → 합격 및 내일배움카드 발급 → HRD-NET 수강신청
+  - 서브 카피
+    - 1) 모집 기간, 절차 안내
+    - 2)최종합격 및 내일배움카드 발급 
+    - 3)HRD-NET 수강신청 
+    - 4)사전캠프
+    - 지금 바로 최고의 대원들과 함께 모험을 시작하세요.
+- ▶ Div (결과: 뾰족한 주특기를 가진 개발자로 거듭나세요)
+- ▶ Div (신뢰: 탑 클래스 현직 개발자가 풀타임 함께합니다.)
+  메인 카피: 
+- ▶ Div (신뢰: 교육 전문가 PM의 전담관리까지)
+- ▶ Div (신뢰: 개발에만 집중하세요)
+- ▶ Div 6 (신뢰: 취업까지 함께합니다.)
+  - 메인 카피: 취업까지 함께합니다.
+  - 
+- ▶ Div 9 (결과: 차원이 다른 포트폴리오를 가질 수 있습니다.)
+- ▶ Div 7 (신뢰: 최고 수준의 협력사 1000곳이 여러분을 기다립니다.)
+  - 메인 카피: 협력사 1000곳 + 스파르타 자체 채용 플랫폼.
+  - 
+- ▶ Div 8 (결과: 실제로 개발자로 거듭났습니다.)
+  - 메인 카피: 실제로 개발자로 거듭났습니다!
+  - 서브 카피: 수료 직후 8곳에 최종합격한 강준호님
+  - 비주얼: 영상
+  - 수료 후, 취업률 86.7% (평균 47%)
+- ▶ Div (궁금증: 나도 할 수 있을까? 걱정하지 마세요)
+- ▶ Div (한 번 더 강조: 지금 바로 합류하세요)
+- ▶ Div 11 (FAQ)
+  - 후킹 FAQ만 남기고 나머지는 고객센터로 넘기기
+- Hero(후킹 역할)
+  - 메인 카피: 국비지원 1등, 내일배움캠프 0원으로 개발자 취업할 수 있어요!
+  - 수료율 + 취업률 (다른 국비지원 지표 함께)
+- div2(내일배움캠프 상세한 설명)
+- div1 (전체 3줄 요약)
+- div3 (모집 개요)
+- div4 (이점)
+- div5 (이점 이유 설명 + 취업)
+- div6(취업 이유: 협력사 + 인텔리픽)
+- div7(취업 영상 후기)
+- div11 튜터 + (현직 개발자 풀타임)
+- 채용시장에 맞는 개발자로 거듭나세요
+- 개발에만 집중할 수 있도록 행정처리 다 맡아 해준다 + 매니저 소개
+- 나도 할 수 있을까라는 고민 → 이미 당신과 같은 사람 다 만나봤다.(노하우가 있다)
+- 비전공자 후기
+- 지금 바로 들어오면 사전 스터디 있다(why pay now)
+- div8(결과물)
+- 동료와 함께 한다.
+- 마무리 → 웅장하게 지금 바로 들어오세요.
+- 마무리 열정만 가지고 와라 → 근데 선착순이다.",,,
+page,2023-01-09,2023-01-09_(구)그로스팀,f13ff966-3b23-4136-a8ad-b7666308cc4f,https://www.notion.so/f13ff9663b234136a8adb7666308cc4f,5,yes,"(2) 실패를 두려워하지 않는 실험을 통해 10x 상방을 타격하도록
+딱 1시간만 시간을 내보세요. 함께 고민하고 해결을 도와드릴게요.
+(1) 기계화를 통해 눈을 감아도 매출이 성장하도록
+[https://studiomeal.com/archives/197](https://studiomeal.com/archives/197)
+[https://studiomeal.com/archives/533](https://studiomeal.com/archives/533)","> 💡 **Epic Growth: 역사에 남을 위대한 성장.
+(1) 기계화를 통해 눈을 감아도 매출이 성장하도록
+(2) 실패를 두려워하지 않는 실험을 통해 10x 상방을 타격하도록**
+
+## 목표
+
+    ---
+    [TeamSparta Key Metrics (Link)](https://docs.google.com/spreadsheets/d/1NxZCGEArkpPKSNhvpeOpOL2BCn7I0pczGrYevRFyUp8/edit#gid=1670550690)
+    [Growth Team Key Metrics (Link)](https://docs.google.com/spreadsheets/d/1A4MN6cz85ie4zUTwkwO5g5MOZEmzWqFirnjsLqXw-78/edit#gid=0)
+
+## 메이커 리소스 캘린더
+
+    ---
+    **디자이너 & 온라인 개발자**
+    👉 [**[타임라인 바로가기]**](/c24ba46ec3c44470bff223a17f6afa54)
+    **플랫폼 개발자**
+    👉 [**[타임라인 바로가기]**](/bae857d4338a46fea20737e1b481336f)
+
+## 회의록 / 문서
+
+    ---
+
+## 배움 쌓기
+
+    ---
+
+## 파트별
+
+---
+    > 💡 **인텔리픽 파트****
+인텔리픽**
+📊 [대시보드](/f7d687f6fda9400ba52355499809aee1#8411a65769df4c16b0c23a7b6bcaf6f2)
+    > 💡 **그로스 파트 - 온라인**
+    > 💡 **그로스 파트 - 데이터**
+    > 💡 **그로스 파트 - 부트캠프****
+항해
+**📊 [대시보드](/1fc2e906b50c4681bfdfb0d3edb1cdbd#d5974147c22c4b9f8c0cafd3d2213299)**
+**@mention** **
+
+**SW캠프
+**📊 대시보드**
+****@mention**** 
+
+내일배움캠프
+**📊 대시보드
+  > 우리나라 국민의 95%가 받을 수 있는 2000만원 상당의 교육비 혜택,
+혹시 몰라서 못 받지 않았나요? 
+  **딱 하루, 1시간**만에 발급! 스파르타코딩클럽에서 도와드릴게요.
+
+## 내일배움카드 혜택, 알고 계셨나요?
+
+  ---
+  급격한 기술발전에 적응하고 노동시장 변화에 대응하기 위해, 나라에서 훈련비를 지원해주는 정책이에요.
+
+발급 해 두어야, 약 2000만원 상당의 K-디지털 트레이닝과 300~500만원의 훈련비를 받을 수도 있어요. 
+그 뿐만이 아니에요. 약 100만원 상당의 K-디지털 크레딧(디지털 기초역량훈련)도 받을 수 있답니다. 
+
+## 이런 분들을 돕기 위해 준비했어요.
+
+  ---
+  국비지원 교육을 **몰라서**, 
+  혹은 알아도 혜택을 신청하는 **과정이 어려워서,** 
+  혜택을 받지 못한 분들 **누구나 혜택을 누리실 수 있도록!**
+  - 대학교 3학년 이상 재학/수료생. 취업에도 도움될 꿀팁을 함께 알려드릴게요. 
+  - IT회사 직장인 누구나. 국가지원금을 활용해서 직무역량을 바로 올려보세요.
+  - IT 회사로의 이직/커리어 전환을 꿈꾸는 직장인. 교육비 수령방법부터 이직 방법까지 배우세요.
+
+## 혹시 이런 생각 하지 않으셨나요?
+
+  ---
+  > 💡 딱 **1시간**만 시간을 내보세요. 함께 고민하고 해결을 도와드릴게요.
+
+## 국비지원 코딩교육 1위 내일배움단에서 주최합니다.
+
+  ---
+
+## [내일배움카드의 모든 것] 설명회 개요
+
+  ---
+  본 설명회는 🔥내일배움카드 발급 방법이 궁금하신 분, IT업계 커리어가 궁금하신 분들🔥을 위해 진행됩니다.
+  - **일시** : 3**월 14일(화), 오후 8:00~9:00**
+    - **`1부`** : 내일배움카드는 무엇인가요?  
+    - **`2부`** : 함께 내일배움카드 발급받기
+    - **`3부`** : 내일배움카드 잘 쓰는 방법 & SW트렌드 및 IT취업 꿀팁까지! 
+  - **장소** :  Youtube Live (반드시 PC로 접속해주세요!)
+** 참석 링크는 당일 1시간 전 문자를 통해 전달됩니다. *
+
+## 여러분의 시간은 소중하니까.
+
+  ---
+  **혜택을 누릴 수 없는 분**은 미리 알려드릴게요.
+    ➡ 현직 공무원, 교직원, 연 매출 1억 5천만원 이상 자영업자는 혜택을 누릴 수 없어요. 
+    ➡ 45세 미만 대기업 재직자는 월 임금 300만원 이상이면 혜택을 누릴 수 없어요. 
+    ➡ 4년제 대학 재학생 중, 1학년, 2학년은 혜택을 누릴 수 없어요.
+
+### 즉,  **대부분의 국민****들**은 누릴 수 있는 혜택이에요! 
+
+## 웨비나에 참여하기 전, 무엇을 준비해야 하나요?
+
+  ---
+  카드 신청을 위해서는 Hrd-Net 로그인이 필요합니다. 
+  하단에 있는 [웨비나 사전준비하기] 버튼을 클릭하여, 안내된 설명에 따라 회원가입을 완료해주세요!
+
+## 지금 신청하세요.
+
+  ---
+  3/14(화) 딱 하루. 내일배움카드 발급부터 누릴 수 있는 혜택까지! 한 번에 모두 알려드릴게요.
+
+## 1. webflow 초기설정
+  1. [https://webflow.com/](https://webflow.com/) 접속 후 로그인
+  - ▶ 로그인
+    webflow 계정 로그인입니다(google 계정 로그인이 아니에요 😎)
+    - ID : rtanny@teamsparta.co
+    - PW : Tmvkfmxk0001!
+  1. dashboard 클릭
+  1. new site 클릭
+  1. Blank site 클릭
+  1. 사이트 이름 작성 후, Create site 클릭
+
+## 2. webflow 기초 다지기
+  전반적인 기능들을 25분간 설명해줍니다. 반드시 이 영상은 2, 3번 보시는 것을 추천드립니다.
+  - 위 영상을 완주하고 나면, 충분히 기본적인 랜딩페이지 및 이벤트 페이지는 작업하실 수 있습니다. 이후, 작업을 하면서 어떻게 해야될지 감이 오지 않을 때는 Webflow University ([링크](https://university.webflow.com/))를 참고하면 대부분 궁금증을 해결할 수 있습니다.
+
+## 3. webflow 기능 이해를 위한 css 지식 다지기
+  webflow에서 랜딩페이지 개발을 할 때 필수적으로 알아야 될 지식은 바로 flex, grid에 대한 이론입니다. 굳이 외우실 필요는 없고, 이런게 있구나 정도에 대한 이해만 있으면 됩니다.
+  [https://studiomeal.com/archives/197](https://studiomeal.com/archives/197)
+  [https://studiomeal.com/archives/533](https://studiomeal.com/archives/533)
+
+## 4. webflow 컴포넌트 활용하기
+  컴포넌트란, “여러 시스템이나 소프트웨어에서 재사용할 수 있도록 여러 컴포넌트들을 만들고 재조립하는 소프트웨어 개발방법론”을 의미합니다. 
+  저희가 redash에서 쿼리를 짤 때, 다른 분들이 잘 짜놓은 쿼리를 복제하여 재활용하는 것과 같은 개념으로 보면 좋습니다. 
+  해서 webflow를 장기적으로 사용하게 된다면, 자신이 개발한 컴포넌트들을 다른 분들이 재사용하여 빠르게 페이지를 개발할 수 있도록 공유하는 것이 좋을 것 같아 컴포넌트 문화를 시작하고자 합니다.
+  [https://webflow.com/dashboard/folder/646081cdee0fd0343099991a?workspace=sparta-coding-club](https://webflow.com/dashboard/folder/646081cdee0fd0343099991a?workspace=sparta-coding-club)
+
+## 5. elfsight(설문폼) 사용하기
+  [https://elfsight.com/](https://elfsight.com/)
+  1. 로그인
+    [개인]
+    - ID : rtanny@teamsparta.co
+    - PW : Tmvkfmxk0001!
+    [공용]
+    - 구글로그인 (contact)
+  - ▶ Contact Form 클릭
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/0c4119ab-b7f5-4723-8da6-526e452d7d94/Screenshot_2023-06-29_at_3.48.47_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XBE5LJ7C%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073724Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBQmxDG7LtNsRg%2FhfiBKW7FpQmQW9gda%2BBFYetl7VzFGAiEAoiBm%2BWtg269uhbIHpFMcWKsEt1FfTjQSZx9aoT4d4Joq%2FwMIKBAAGgw2Mzc0MjMxODM4MDUiDI3rrobhwLUV1p9lTCrcAzh3hRuM%2B94qbZonHSxV8u5wEYWRtjL8kzJTbGP0AIJhC3Xsn2TlZ14xgxLKlbJBk2NQQp17WteIYcOrMi1SKH1La1x%2BjjUAfOaKAcinK0lIHoPbmrmSpeNk8l5ockEBDhzukvbl6tL102yASHgagEeVvgOydKtdJQ5QD6C2uXGzoniRY9PkX7LOtMZhA42G3wPeZpzCfQCxqmDsZw3MNHVwqGOYoVpei5tBNn6CXZIryNN1gybyymHLe1M1d3eFOEFc47msaOX5KEVnz8jw6JD0ShkNh3IrtcSU7v4IGzUEI8CvjIT9E7ZzWtb2L2Iwkn3TR6k%2B4%2F69kvSxvuWw6x8tiIgoyJuH3bB189wro8XCwo8pltoMlt9K3ywiJRalTJDQMevzKd0B5kF6vFdcggZNmV2woy%2FRSMhtoqExs3s0JFd7iHAJAKHrvvkLgRzFysDJi4ZTMhouTVDmFkXy7mwBOKssk2K1u7Jz%2BlEPxXBFt7QXfBY%2FlQkSB2Jpnx9WKBmPsYtga80IMjbnYAOkzrB4TkFvVg4wgOL1niDmXZv8ypFgxFKaPz2lSBD1fSlJUOEQamFn96SPEOk%2FhTgVfZaLvQVsvJONuZe6CLS8kDo9D0NVlT1%2FxIM7kbNbMMLfw8YGOqUBDibseaHp2hIb5xP1b5huMyuW3Q7DQR7XszEWj5YkdTw1QYw%2FiL30PynzLzEWoH1kdviVlUG6l7CD6cswOjjeK7eRK%2F7D2P1l4BEYJU2Q2OJbACM%2FuTZAhcrLwKfIMUncB%2FzAbC6HyT6xDDZuAj6zFdwh8yzTNiW8hMtb3NzQUNCsXomN7pNG6srO68wVyeLxVJ3I1BdTfJtJYKZQbJ0JniTZ4CjR&X-Amz-Signature=1ea56d9dbd8b8d45e185cdb91d6769cc634dd011f5e17915a3e31ed3d76410d0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ Create Widget 클릭
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/5e45631a-436d-4794-9a46-647eb13d8ab3/Screenshot_2023-06-29_at_3.50.15_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UVFQ5X3T%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073727Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCnqSIDEPt%2F2JklsHN4dsDtii6pFuTFHOCnt3%2FLXwcLwAIhAJ85KeePVabGfGfCdjBgQe1Ehxg4v3KCYW619vnip2K6Kv8DCCgQABoMNjM3NDIzMTgzODA1IgwmZKi45hPKiZ1TI88q3AP11TMp9GK8wDW9DVX%2BfuDTxBOjXAJVtMzzLVLcdiduJhfTCb87haiDCX%2FnLR6h8np87DDgGEJQZ3AXL13I2hhDyI413z%2Bi%2F0OscBHuSJGPBVc6kJhME8P0hfR7EBVqD0FRXNzGbUBh5Vu9nshC7tEVmXIsxcfpC99XxJ3FKPv8UQ765BGOem3raRC6ywlmeRYgOw%2BDuvMgznyrdhtwC5K6Vu7bb%2BGArb6TOiJOFjXuKryArmP9TlXKXx9eGt1cy1OYlWLw28buD0bRbbWL57lZa5H75N5UOFReejWZCVcuL%2Be9OwcEB8kTGU7Vu0m1YzkDxCbq1BpyztWW808yWV77YiKwJOPqEmwLLcAfjcWq8HaXLDIOtKY0SHgzE7fTkED28Y%2B64SrmfI1x3tJBo8H7tN0ihNT3fqMJQiWjz7OdzqpDAusmkz49NV1wJhZ9XlXoHAA3gEcHHvQyAbnYGAc3KM3Lgha061mRUcP9f1dtqDOwMLKkxca1mrr8%2FV0GPjKX9Hwpbnv6%2F8iQvHQFiCkM420bm%2FDV8docA9zIHcoPV9jXZ7OPt87dTgLm0g45u%2FNVbOLAsK5fV562HSmOgKRzC4j8aXVUyF4tjmk9LwE28I5LUTTD46bqRym%2F%2FTC838PGBjqkARjt%2BX4UlQSLKRtGt62JTxOkzg9hHn7QfVgg1yhIa3ZFMGIRcq1mabh%2BWNHA7wJ2mNlPmd4QqD6DGkehY9RzlVUgzDGIV2j7FS7YHrrD83VERsR6kZFncKWW%2FBQ7WqQLBlzfhLup0AzqWjQQ77hScDUR5KggkISTPheKzSkvBJ4ogZfsJGclN8x%2BILJl2zQuSR0qrL%2F4bYmmkmp8OIupa4ye%2BHIl&X-Amz-Signature=8460a30954eef46639d1529d97f0d57e02aea6f4a686350d7c508d24b84ab567&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 필요한 폼의 형태 선택
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/5c4a59e7-5298-4733-b32b-dabdd8db882c/Screenshot_2023-06-29_at_3.51.10_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WXHLADX6%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073727Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCID9tgUtkHU%2BU13nk%2BFbspJzW48jZmxmI9ictp%2FYvTmrDAiEA5B1oCyXeyGvPSXSGu%2F84MjdZMAi43TIhyt%2BvFTpx3NYq%2FwMIKBAAGgw2Mzc0MjMxODM4MDUiDCvAHeAT3d57B%2BcMdCrcA2n1uaXe1S0Ha5F8LYes7wOS%2BN5tNNTtt6JUuJDU5rUBwt%2BHRmD%2FI8k4OKrFDzlE6fMUJ%2Fauj2BJ%2FxzGMtM%2FILphv1A75jqgFunPopMaQRZoyJ5h0zK9HJUjEiaTKW%2FwxO%2Bskub%2FaKvjy34jN1q%2BtBuyyXmeT7VrvfjsfeB%2BClsJrq3J0tMT5UGtgsOSPjnEYpYHV9zcZskay0%2FZSXKyFKN4kHSKF%2F8xLpCklatpKXBR1k6ZQdYuoOV5%2FXYWWFo1U8rxU9hz25GM%2ByUeC8VnwrZEf1U1%2Btjuqid1aOB3cHRctnpVRwh0Dd3W6kyul46i2R6eLegN%2FwRpOj1A2zxj7p0%2FqcHoh3HRUATmqgYdv2C%2BQooz6pdLQ87y3AW1v%2BAgnmi%2B8QH7pqioiIRLDvznCUQ%2Bf4v2Y7pMhKqqgcG%2FAO4OSNCzsAY9htD5dEe%2BciQ%2B0r5eSbR3yohlHLk%2FVcevNqPJYC0uerJa%2FoNrXG%2B%2FR%2BW9DqLPe7niK4pHQP4I5WWjzer1OEqkPn82LWTWvUWcwh0BhnGme4fCAfzvkzRMMtzBUxaRAeiVQqZEYo2XbZzGoUifSf1pas8bZXkcCr%2BiOlPTLezwHqcrxRHwWhNGSyQQf%2FmTutnjuz8A%2BtPbMPfdw8YGOqUBdwG0J6VTIUQ8QQ%2Bw84HNYTdA5fGyi3Io4WhZzHy8ThCmKIoP8qrI%2FHUYF6cWo3nf9h7dgEir6MtJ201HEBDz46fFJVmdYb4UiAeJ1vvDTDS5mZNekASLrbgu1w4EIJ3Ur8zMRTgrSVKJbn2wykroDIkal107VcObcUxr6LWRiRjpPOwAXZpqUykhT4Dx73zENSD3URAdzfxt%2BHeH3WWzXXIKzcNr&X-Amz-Signature=dba577281c9b138cee0a315a8770a54631d32ef2f33edb294ea7795eb443b58b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 설문폼 커스터마이징
+    - Build Form을 통해 폼의 텍스트 수정, placeholder, Header, Footer를 수정할 수 있습니다.
+    - Layout을 통해, 임베드할지, Pane 형태로 작업할지 선택할 수 있습니다.
+    - Appearance를 통해, 다크모드 설정, 키컬러 설정, 폼의 크기 등 다양한 css 작업을 할 수 있습니다.
+    - integration을 통해 스프레드시트, zapier 연동을 진행할 수 있습니다.
+    - 완료 후, 오른쪽 상단의 Save 버튼을 클릭하면 작업 완료!
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/23e592df-1dfa-4ea8-9d71-5ecb7b208260/Screenshot_2023-06-29_at_3.56.52_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QFLUESGW%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073728Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD3yJ1PDk%2FN3xDuUOVnQjgOr2Czh%2FVprYlK%2FW2nAqFzbAIgD1EQOHzDxrI1jpD0WNKZZyKVmezhuWUkbOgYoU76GKQq%2FwMIKBAAGgw2Mzc0MjMxODM4MDUiDPSG4zBFb65JjnIIeyrcAzGXNJLFlTCLapfT2mrvPwBN%2BGBb9dGmQ0cc9%2BdMw6dxy%2BhiiAyMbvV5CoJjdUtyXuQqIG53SrPzPRx19PUKWCPZZ%2B2h3SFxmO%2FhI3mgrLCPfz%2B%2FVjtIEZj3pXrEYi3oiQL20J6l9Z%2FME2faaKdgiNj1dYFshrxF2CJVZRz%2FRMuBnLn%2BsmKsYNXs8Tqqz03CZXlITqhOZpIs0zAcMrIFi5H1SUog%2F5mAbc5BZU98F%2FgSVar6e8iqs0bFrTf7GXqrc0NO1I%2FXU8myH9cpNxImzm%2FSxhXfXeq1sRukB4lC5GIz2d25aO0JIBV233H3yCMK2eeIlesc5EL85RrjO%2BCrRszFaQ944dkyx4QOisbqP1kM%2FCs7dSKXmSXbsILLEVViIS%2FBmcyGJBU9yQtWdezHFmwVJWqDZkSs0%2Fdz0Z3PDe21Bjp8svhwwPgoyvMggG90GBgJ6SqXNWZIwc4DnfYTPqgzJIka75aBLEXv5LDQ77szenrK8%2BZwMpwtZisWZdHW%2F%2FLnVFqxR615hzMxiRuq9FuEbxkMhwVFn9B%2BBKaInTvCltO3OwZm2%2BLDSsGPuwhP5oHqUWHXFhSsBB4XczU5boX%2FudM7T1xy8TAWYYXnsyDM%2Bv%2FGSgZhmNjNNn5TMKTfw8YGOqUBNI10mBpnsLVFk68WXTHRBc%2BpMoZRkZeMMVsHuYVi3BD5v5wGKeNQFhS%2FbgIITrqUlM8YLwdNACYN%2BUqEIdMlCqTCd6OmqgmQwyhm%2Fj%2BdY512RkLSS4acjlIXO8hQOODHp7HkIXEw%2F9HajwXsNpOhumNVL3RRN6dhFU%2FMx%2FXB7qn%2Fuh8DsJPr%2FJzJbZQHn1e7o1%2BwWFAPSd6aNLESenSEZG4gUnCc&X-Amz-Signature=7a936d1edf4e5e6ccd5ab2e571a6d2de2fd84dd19b1f9fbef0fbd6bf98ecaf94&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 작업한 페이지 임베드 하는 방법
+    - save 후, 아래 팝업창이 뜨게 됩니다. 팝업창의 2줄의 코드를 복사하시고, 이를 webflow에 embeded 하시면 됩니다.
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/97890d17-2bc5-4c8b-966d-1d17c33cce77/Screenshot_2023-06-29_at_4.11.46_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46662DWFFYD%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073729Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIBjKD1RF23TAG4MsYQYatOlE1vjGLh2YHIv1xG4S%2B4RzAiAdHP0mRa%2FRrLi47J%2Fv5lBwBtcAslmpadRZNhtBtoUnZyr%2FAwgoEAAaDDYzNzQyMzE4MzgwNSIMPR7KWz9vHj2A%2BLnIKtwDjmGIzG6%2FA8UV08cW7eoFyheQ2eAhGF%2BMf8Thud5%2B0y%2Foye0i8dTle7gxn4RY%2BwNKFigxWTjJjyIB62glt6u51zrC5CApULJJMd9XKd1IEuTCOTmIluof58mFKOzdTkfPmARt3vjggpSLYaLkSsqH%2Fay8IN0j%2FYXX41Ytia2kzMVbBzpCCejHal7psG366I1SznxJEBIpa2Tt3IbzOafpbLOjuE5bfpr7YJHaRZtmSNsUsel3lSGL9y%2FvYItnypQi9Xv%2BX6VQmQ%2B%2Fp497YsH3zTde7U5pa3cqsJWZ4TA5aGbK7E7Ny%2BibkOjHkOSPx0JcDXi9Vr06daOsBsPN1miPpIgE6zd30j3qtiC4WkWVd8iC7DGLjPBYtn4srjYhnvzTHTWqf2J823AXKP8dinldwSmR27hhfL0RQ%2FvtmGd8Qyq%2B8VQBlXUPi%2B6sLY9ohsLTIirr7gzkl14KvTWlL4%2F3dT11x16jNMqYib%2F2pNZzB2bAnucGDo%2BF2n3cu6FU8oDm6f%2By59aOKcqHHMsRGvnSco92fmtzvlW7BTcGBPAwpTJX0QpIaH1DhzrMf51EFKI4%2BVp8KMaagDJ9OdZAwLa%2BAeQumXDMFrLZfJkRd2XtOssVypfM2qM4W%2FaJZLcwrt%2FDxgY6pgFwLXMRLpq1%2F06wE24IupzUB%2FfRhtkdS4WIZ1G9hbTn2K%2FrhFoju61TIcyiogsWybQoNLhkEC0yD3M5w3mpHecMgKp3TpHFVaeBt4gpaIXaBSHODzNDlB%2FJ5zuOERBfkdnquDyYixt2d8HkzVR6cHnGRfSG0%2Bm0l%2F5%2FZ2ZafZTHsIRi0FF5W5naMUmwar8ffqHnMx6Ivy3BPCTWXm2x1PCQsHFlbyO5&X-Amz-Signature=e411c69a1aa67a912c2e6dfcdf2b3a4efeae1e9936332b0a68b9d976704b3e70&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+
+## 6. zapier 사용하기
+  [https://zapier.com/app/dashboard](https://zapier.com/app/dashboard)
+  - ▶ 로그인
+    ID : [yj.kim@teamsparta.co](mailto:yj.kim@teamsparta.co)
+    PW : Tmvkfmxk0423!
+    ID: contact@teamsparta.co
+    PW:   쓰파르타0423
+  - ▶ Create Zap 클릭
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/9be14541-8edd-4d69-bca5-eb85a9ed6eb2/Screenshot_2023-06-29_at_4.57.31_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665DOCW32R%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073731Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICXZ0AGkCzGRdIoKY6dMzZYnVL2LKX9i3CDQ4kBH%2BhpyAiEAmAqc%2FAxjdBFlL0pggI0M7Ozsi88wDZ%2Bu0nObocydqIcq%2FwMIKBAAGgw2Mzc0MjMxODM4MDUiDGTlpoG%2F0uew7tBNeSrcA277DrcBhvH23bf3npYBmyedy4p63u4mzA2BQaYcFkZKFaUx30fE0Oxp2DBzcqWorhyuEl%2BovGpaDCnHmhZskUI1gKm%2BjMM86CcHBdgFnry9lCfKecAyJeiRPbeLxYkSYMjpow11%2BCr7uaqjOrklhVuoCpTbiiiE2EWHdHQMvyG%2FzYWkFvbX5jmrY4BxVDezCmQGoyEmGJME8UEdSq5UJCcQX5EKLk6B0bDw%2BCJxarqZJaiI2iy1OsWfl76ry2ut4KC2zY3kgKdbTMFhnn2OWD8t%2Frg%2FFvTKrmtIK2aJa2gu7mBvHSm8%2FaIbC4PmTTWST32h%2FIk3KhxhpYBPy1n7fwOTCn6oD%2BZpmLFiiajywiHPJ3qst%2FaVdPnbXMRHdUduQVKgynW1oYNbBxgiQGwPWYfSF6MHmePcM6QktyY0VAzYU%2FhYmoxntcCnY%2F%2BoVfxDe8jpqKAFdUHvyrltQpgSdH2A9SwTSOhIz2zSxuXJVFPyG46BHNtPGerYXB3zX2YRrFXZCXTw71Nvh3%2FKnyLnTjJi3dcwtakttcA47IYM9Ku1P1xeyVKDZGIALLEe5BPEEimpCJSx1mmAShzBmWUsJWIvU362arE9gIX%2Bf7mV3fiygu8gQW08OVz1hHkKMJbew8YGOqUBe0oPwXo1Mc0J7KLd5IaDSB6LDMApusacr6SjDDWLC5TlfqSFSB8spfRrOvO3U5THalcPd63SfYytM%2FnXtpQGb%2F6VgFiN%2BGaghETH04wGv9UMg6bvVtL9oGIuHkWzIPZsKVu3YW2ACZTYV6EwSG6kSVD75bhAx64EmFGO5iQ9RSIjNatbsyDSfBrp2LbHMdAvswan9Xw%2B%2BfrRVKfONgoFM9NGusC%2F&X-Amz-Signature=17bea19536ff21cd26c17c19e3fae7ff62156a852116caec1de0307e8cfecf28&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - 트리거 설정
+  - ▶ Trigger 설정
+    트리거란? 어느 특정한 동작에 반응해 자동으로 필요한 동작을 실행하는 것을 뜻합니다. 즉 어떤 동작에 반응하게끔 할 것인지 설정한다!로 이해하시면 됩니다.
+    보통 구글시트를 트리거로 작업을 많이 합니다.
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/ee04cf80-813e-4fa4-a16f-115636605c28/Screenshot_2023-06-29_at_5.00.11_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466USBWPTLS%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073731Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCDrwhZ1H0FRC7QqXG0vJ4grtB91TlpmKgdk9BVT919%2FAIhAKgCVgSuYTKe5XfdG6sT1NOuTKKNPIM4H6dFJHTfVRa1Kv8DCCgQABoMNjM3NDIzMTgzODA1Igz2x8aFRzI%2BUzpEWH8q3AO%2FOWZDw2H9DYrJHX3mRN3wTOrBtOkcgUGSQ%2BSg%2BmN0lnF2oiJQSc7ak4L%2BPd2YhEdTv2BBFbGSXcshFygZISzDCC3UApF387LJcsT7sMAxxJaguq5Bxi8mPpDtFFBrPVecb5JVlFm7oW6m%2Fo2FfXllaqvzfAhaNgGSyKUHdhjrKpMGvkxapqdmtQsienoZtjwepikCz8DgLPPI0c4oJC3FU%2BAweKg6YXoAqZLxNvaGqBDRleRy6TkPulViAkyyHJbCc9foqOqH3%2FiyinMwWelKd5aMqB815bS9fdSJh%2FEPDpJ%2Fcq%2FITg5XDlmi7iZqoQtNyEeNg17kZ1trdCr%2FApqR6nGbTBEmEMIJovNcIe5Asd1AiF56ttrltLZuJ8kAsVKfAd03lhZ78xNjz%2F3Kn9P3UjyJKyFW6mbRXo1gjrwFqak4DfbsgNXOehpw%2FU0zTS9jlni6OX5uZqJWjbCHnRkEh7LjC3sSrVXndf1vCIw%2F4ahDioAf%2Fq8nHrJYmJcdVXcRNC7tX90wwxwzklQGFIUNAphSEZpR3nY7%2Fuc2awp2NkiiLGYAbPoL4gXnZdWLdWf8PdKNq%2FX6kDxFCD9ONUcfv9L6G3%2FIQFUIYgspyzTPnAs3WHTxFnUvDp9SIjCX3sPGBjqkARs0qwTUXv41OBLiL5Bvhd%2FUtOJKIcqOlQ%2BhbSkEGKEgPIEdyjzqJim3052Qoj%2FoBAo7Ae4fxkhouVKhm5ydecOxokD1S5z0TKSIx6HUg%2BvZAUTnhZffAYjq1FLBgMY9jjiVvNP7UkNKUL8KASc8DQv2DOsoB23%2FUepofFJHUxtUhaEcLVyD634ajnQTlC3tVBNDDmUXqZno6TVJGiLGvjTzi%2F1Y&X-Amz-Signature=62565e09360628659253703fa9e320b364b368194d3cd9ddae0d3867ba78cc8d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 이벤트 설정
+    특정 동작을 설정합니다. 보통 `새롭게 업데이트된 열` 로 설정을 합니다.
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/8eab27a9-c470-4865-b1e2-f3909f523600/Screenshot_2023-06-29_at_5.02.22_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466URKBBSF4%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073731Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC1LrezU9UHHKXHau8sU%2F%2FA%2Brs2ZlWVOaLHX9nXafmzkAIgZtGPUmebfqeyzGGyVpXVbDYpcxW9zF2m2dDjzskpOY8q%2FwMIKBAAGgw2Mzc0MjMxODM4MDUiDJBILb6uWXvxijA7HSrcA3Ad8E8fJLKSCqd9RkLRDw4u3d%2Fp4DINHp0iz87Lq%2B%2F0VK%2FRg6H7O21K5MSsQYqXhZlv6Lnv55ujkQFG9YFLHxJE252ne8zUB7lez88giDFlQlv6I8rNcEwE5HSXBvut9t4yzdVxPOeap7H9Aj9eWvXdGdJeCq%2FW8U%2BiFmOo5kj6ka3OIjRTqfmDADisAoVTyQN4%2B00AvfLjWQCqbFO461lWDXCfwXm6mmMVgFWHFhxyrJCKT5pGF6VUwyAdtEdQ4lMmchry8g%2Fk5uSc%2FsfIzm5gWMmAgIpRkqYSv4tD8O6Xet18C84mIJ8wR2DXH6T13PPvVbBiMcaAL084VOGPpwok6R0u4LkLG99bqoso%2B8UXB1cduXHUUNuJwEa7%2B3uHGhh8I8YND3v1qeP%2FxurDz3IDpKYGV6aR5I7%2BTNtt3OSkZNIt%2Fz4y7RiFpXCC1xNWz2A0rF4FQ9y624LSKJ31BeAmUptSKofyoRiNW1lfZrwUhjl2cq%2BVfb2rlR9wYErT9CPo%2FhLCCEczr2HOT0ijoDIwHyS04x1FlDUX6f%2Fij%2B1IV6Gpv2cDbfka5EdSn%2Bi23LMTX7JWI7euiGlccdHxJ22PPk1CkfDuYwE%2Fry6oF7iUphr7FGCzNK2mcl0hMJnew8YGOqUBobJj77dHa6VVuzd9Aq8nZPWU%2FS%2FhkaMC1xSwe1W7jpJKjmIR5AbQu1u0myixZQ%2BaqVPZ9UO1T6E5GqpyBTrUb5nrbfD%2BaN900KycHTIKkdvaUVES%2Fj2ZggLl0hgqPPZc%2F0WuDRc2lc8OjVtZ12LZaHy4aZL3fuE4AnjMO1r%2FfZZwzCiCKoeaWx3V4ewOHqpBGrF6DFofsyZtvlCMF8zYrYYirNFW&X-Amz-Signature=387edacfe0466c4ac104a64c7681660cca6004937db0c1370ffa9c35208db368&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 계정 설정
+    어떤 계정의 스프레드 시트와 연동할지 선택합니다. 계정이 추가되어 있지 않다면, `+ Connect a new account` 를 통해 자신의 계정을 추가합니다.
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/8c116a7a-4caa-4b9b-821a-0f9c860eb76f/Screenshot_2023-06-29_at_5.03.13_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UWCLZPPX%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073732Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCegokOuAsaofcXv1FaIkgJZ7pSuNK3bhIqTJFuIdBZdgIhAIC0K936K%2BIW2AinBunn6jUvXXfi%2FmnaU9SZ4G8PReQcKv8DCCgQABoMNjM3NDIzMTgzODA1Igyjy%2BL88VYLHXt%2F6UYq3ANMuBUt%2BmhfzYAIOBzlPONCg8ueOZHDwScWHBOebrTz8difsqnyz1Gw1nu0uhNlVZYfvJBFdXne%2FQXl%2FOxvVdkkWwL4Qhj7bfQuER9MEYDgjlsdKR%2Bj51aSH%2FYMhGN%2F7a1J7i5rEd%2B7NUTo1CXZ2PR9M6gcYKgrDobqJXbK75%2Bopr%2FalOlvFIF0CtceLjrvgOV7ELK44edrM1cXIDCE3J4rECX%2FHHrBudJc%2B%2Fps6E0RNEM%2BPnaNEGZlGgcj7leoSvVM4PzZmQnVDvNrKxiYAkM%2BdX3WiPZ0TWb9FSUjgQXO4vW0L%2B9%2BK28hu%2FkjNt55K2DrvfRk2dfZCBixu7teNXPda5yN%2FMXs5vPuXQ6Ymu2tf7Q7QrZS267yXPFeVpwhkrA%2FJKmC%2Bf1XuI3Q6bkCGxHVm%2FUsd1TaLFBnlzHxxamb23sAykYgJ%2FsVgB6nVIM%2Bw7HTApxPq7onO1GalHMI1yYyzHNK33o1xX1sVbDifsyf3a4vUHL%2B5rCn%2FxiHCmGboz4ws3TMabZRj3%2BTNVfTjXZ7rQYygie2Uxa7K2T0zynjUvWB2opVclWTWpEp%2ByKLz1s%2BHjHNIupQrSlHDcjyBPlUhek8PMHoNi96GDTy9N0RQByjvuBDOsmFYYPVFDCm3sPGBjqkAcqUkMGgOnWkAo%2FGS4oYetfDrffBAV24fzusgyHdEPyDt63ONRRcMEK0lANcIMjCsdaHkELDjHLI%2B4uV5kg5c6m0EImJX%2FkmR%2FSkwxDvqlJDnouSVh12EFmUXVrVMFrOEjmoIxb5g7qRaKB8UUJWF1EFe6WEBmwacrqUeBAXpTaXsLHFCVyRvIT%2BTlgquP1aLf2wHxcZ%2FfIcsfbhtBAeKzvcSlb%2F&X-Amz-Signature=3a9ffa9ec28496eef1417950c3193e77a205db8a088f27911144206cebd5cf50&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 구체적인 Trigger 설정
+    스프레드 시트 선택, 워크시트 설정, 트리커 Column 설정을 진행합니다.
+    저는 사전설명회 다시보기의 상담폼 제출하신 분을 Trigger로 삼기 위해 상담폼 제출 명단 스프레드 시트를 선택.
+    1. 스프레드 시트 선택
+    1. 워크 시트 선택, 트리커 컬럼 설정
+  - ▶ Test하기
+    - 설정한대로 잘 들어오는 확인합니다. 확인 후, `Continue with selected record` 클릭
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/fb4589e5-bfec-4170-bc84-b769bd4097d5/Screenshot_2023-06-29_at_5.08.38_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662MGBHDRT%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073732Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIH%2BhN%2F1Kejk5BOkLFrRLe0V0TP%2Bv60iEhSAfuwbIeSIXAiBkHqRizhRJK8WPnHdnxcNpLU4yZxnZZuHK%2FEDVfI4fdCr%2FAwgoEAAaDDYzNzQyMzE4MzgwNSIMkZpYw%2BzttturkXEvKtwDXuy2Jjy9LK6IRNnMvchyDlmScjcinxRbAyxo0Sa%2BpAhwefNfhRdCmhcb4hliqgfPwzxpYuESFUvZ0HDbLzFfi%2FfJzC5IOpscn%2FzX5LMy%2BCklvShEK2ZZXoLDrXD4EbtLKKqZ2u38SNitp99g4qpuNxbucajj%2FVZ%2FdYl35bY2In0rYpdl8u7Ci4Uoj2Y6McCRbEY%2BdxiweypPkvjIWnwW7MH%2FkOiJCH4IN1jip2BY24S3Yz6pbKY1KxBQAZDXs4KBPrjxR5sfUzKdwOsbo7%2BVmXmGamrZGJIbWhwTVSWuGjH9N4%2FNJ%2BViMSm3bnA0tIO11Fd1XYElRXgM2VqciipyAHBO4q84MZ7regBJnQdbuiuuTYDKxainra6wg7OTB27uRzxcJwnaVBIvXihKLTYYZCwM3HNdjlj6SJ4PgEnFQWMKCH%2B0f3Zv4DkotfEbE5SJoAq4LZnjGMCYCAke3I8gz4AhUPlXh1FZxQBB4oV5ibcodspF2dMD9cOE2IsJakF6Bbv57SXrE7VhpWJZipzT1HeG9bw8qDfg8lCia2nGmzqH447uMriZTswAkI7DQQi4SKq8ugM%2FFwA%2BeA2E42e%2BfDHaZFBju3%2BHGGFyuchHU5qFmOIyuSlapIT7KAYw6N%2FDxgY6pgE34vjnFCxBPQ6RvFMgtsFHcpy6RXIIpMBnkYM2K31GpHN9F2wZngMLxMOX%2FMuPVm5bC8VR2el7jEUpMT8G3vy0tURSFaTZTaIdPdtERBluTiQ743gz4tAbmBUgtJhyEP8JTqaH62e8R17kEAD5hba9S5KJAGhL6q%2BCMb7FtTK4la0CC%2BcjNCw%2BybaEgbX8Vcnl2t9XQ8npUZ8BVSt6h9ddDBUOLySl&X-Amz-Signature=e0cfa41afac0291b08d32945600f35cfe3c5f7c5564f756b65cc2ad7c43b0eb8&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - Action 설정
+  - ▶ Action 설정
+    액션이란? 트리거를 통해 어떤 동작이 일어나게 할지를 정한다는 뜻입니다.
+    보통 Slack으로 웹훅이 오게끔 작업을 많이 합니다.
+  - ▶ 이벤트 설정
+    트리거를 통해 어떤 동작이 일어나게 할지 구체적으로 설정합니다.
+    보통 Slack 채널에 메시지를 남기는 작업을 많이 합니다.
+  - ▶ 계정 설정
+    계정을 설정합니다.
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/dce31a48-1c30-4cee-a519-e03a04dd93a2/Screenshot_2023-06-30_at_10.12.08_AM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664N7FCHXN%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073734Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBmdZ6TLpZFe3%2BxQuFGEDu4hYAjKpl5N4BmlijyUEA6jAiEAyyuZ2pbMkGjnJyxq%2F6XViDyrSrRzmOr3L5%2FUOJu1jL8q%2FwMIKBAAGgw2Mzc0MjMxODM4MDUiDGthhxinSQj%2FlqNSwircA8RrmF0YkclmnD7XthBhn716BurYWeQKlqQ1XtZqWX2cf8i75IOvhBO30IowqqFE26BPjOGQgm1ilpqgbRXitq9EIB1aZKhi5nbquVEAWnKdiPl1TREbvUEHDM4HFkKqhO7XeQm7tY1sW6tC%2Btfg7NVKUyAZI5rN2uk9canVO1%2BYXU9Kl48z9NKUwsypg8TGIhRxJeY8w6yzK5ElfwAlBuHApLUkmOb3xO05YyNzE9k8ovd0kt1UjVrZE3bCDp2QkAgU4O7WY9LmB12OOOt6wcjON%2FaNOzFznttx4E5nlKa7WFPw4Cm9UOGCS63cL9TiGacM1BI%2Bwy6wu8%2BA98Bme%2BLOFezkYnekzrqkdELDdVWl1c97HcnvwgZ8M%2F%2BT2xIbsNJ6OW4f3LQ2pPjR%2FxmOqW4QNW%2FYlNQ8xzX2MMbSmxcP14RZkYLK2KFc%2FJ%2BS6NtyR8n6fjv0wLi5SV%2B%2Fr1sdZl4ksnLlus%2FFC4aMeAvvelW6cfwogg3iUgqise3c5m3CTfp8f2sMqG4b%2FjwyI8fXB4YPRTFJh3MoeVL1mGdG6XJxKSoE%2F0EXVpg9Is7SkWOQbRFRLfWRty5K40qrR6OzRt5KJ%2FXgkXcoUN%2FePmREmmn7AVcxruBLFC4qELlSMKzew8YGOqUB6oAlQxlaoBkAiD6jE%2BQScdxggTru7fDS%2FfVPzRW5XhwOIpAX%2BVxjcQZEeCuE4MZNsI9mg9R0MZr0NvfkpuOEmaSaDmBdlocDSp6VvYYb1ZIRueSp7UaedeTAI6K0Ckue%2BJBiDAecG6X6pqzRWVGpvufSEmFZGreS7NYIGLbCLM46I42sfBM5sUQ5bLIhdRQ76F7oga52RMsVP7sx3i2KEut5irXQ&X-Amz-Signature=64fcf90fdb178e73d4558c5ae53bac383935f727d7abb5001e1792894eb8b7d9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ 구체적인 Action 설정
+    채널 설정, 어떤 메시지를 남길 것인지, 웹훅봇의 이름, 이미지 등을 변경할 수 있습니다.
+    1. 채널 설정, 메세지 작성
+    - 메시지를 작성할 때 스프레드 시트에서 불러오는 데이터를 첨부하고, 디폴트로 변경되지 않는 텍스트 메시지도 함께 작성할 수 있습니다. 보통 Channel, Message Text만 수정해도 문제가 없습니다.
+  - ▶ Test 하기
+    - test를 통해, 내가 설정한 Message text가 잘 설정되었는지 `text` 에서 확인할 수 있습니다. `Test action` 버튼을 클릭하면 자신이 설정한 슬랙 채널에 웹훅 메시지가 잘 보내지는지 확인할 수 있습니다.
+    - 문제가 없다면 마지막으로 `Publish` 클릭하면 스프레드 시트와 zapier 연동 완료 🙂
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/0a22d9ff-20e1-43e6-b680-95b5d498be1a/Screenshot_2023-06-30_at_10.22.17_AM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662EQK4R3V%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073737Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFeUfPzzkgCJ1BJGJtgOLUpqXGL%2BbZC70apEvbPxmZ9KAiA3QURQK3Qn3Q5VxcgOyYAsA8a1smOoG6FPhW1aHNyl5Sr%2FAwgoEAAaDDYzNzQyMzE4MzgwNSIMaXMI%2FajaYtketlnfKtwDD0Pf%2FLS%2FB65QOKf5r1pLqYl9PA6gfLNouskrd6rc9TtuyfOBrjGlaahzOJCmyaqmUDhGFexXaI9zsZjib67RP15Z8BUEflm4cA0lUSCBCG0Ly7GAYH0nZ9affOzuZrtKXU2dF9458BVi5q8c00pMNe5MGAeEcDhRL%2BW9E18a8e8kYTgTqfmqyKMrwJI%2F2AtjhBf9ydUI0IC3KHMM1eoJW6nsChqlp53PSpJwUq7rmRnQuGCGLVUfmZ8bta0%2FAEyMFm5vj1TlDQ5Yj2yn%2FMK%2FoBFtyhV1gnUzpnE7it4Y2QLZeC1cascNe62aozfFLaEP4L6wy7gOzqFj80SptcnKZFNIm2UgEWkkxjyMDpRA21WXwWVIT1WOxnYUyZRFPXYAGd2FJ4RkgeoZ5LIV1l1fGX0xxK0v2ngt0phIqGmi9dUzww3heZOKEF0jCwHq3DAsgenrqiW4SwgRck2DLyInKGS6wOg6%2Ff1PldNFMzql35hQs2z%2BZnBmjGM18chHgsgsL0%2BtkNLW2ovVfQQzypnEUoXGvvrSn57%2F3mEhR2QL6kkz4N0BE%2FG33V7fKbY22gypNLRMDRp9XQ4UCqA8ZhI2DG8PUOtp%2FDNYE2CaWquBspUkVnN8wdctLlI7x3gw397DxgY6pgGsaTVG0hl75Tkj%2FYDEjwJni9QS32ULsL9sVjAwtNIPPA3Q8altMBGofvDZUhkS7QnxMxgKS%2Bc2PFu2GJLgpygkIqJGEgYbHSY%2F4ZM0MgB3cEe5d4svYaz6zHcr6swn%2BUaAp8u2jRSWo54DGgsswZJOGC47yjMyoXjnyWGtrIIt8shn1pPjKQtQDCZK1homEyhlFIqAVTu0Sp%2FFGQo82GFdeoMF8l3R&X-Amz-Signature=0abe32e17bfdc000c8d3da693a42a5d004a4baefe84dcd71652bc36fe34a0857&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/1f57f9ed-bce2-4a49-8bf0-13536b37838b/Screenshot_2023-06-30_at_10.25.22_AM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662EQK4R3V%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073737Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFeUfPzzkgCJ1BJGJtgOLUpqXGL%2BbZC70apEvbPxmZ9KAiA3QURQK3Qn3Q5VxcgOyYAsA8a1smOoG6FPhW1aHNyl5Sr%2FAwgoEAAaDDYzNzQyMzE4MzgwNSIMaXMI%2FajaYtketlnfKtwDD0Pf%2FLS%2FB65QOKf5r1pLqYl9PA6gfLNouskrd6rc9TtuyfOBrjGlaahzOJCmyaqmUDhGFexXaI9zsZjib67RP15Z8BUEflm4cA0lUSCBCG0Ly7GAYH0nZ9affOzuZrtKXU2dF9458BVi5q8c00pMNe5MGAeEcDhRL%2BW9E18a8e8kYTgTqfmqyKMrwJI%2F2AtjhBf9ydUI0IC3KHMM1eoJW6nsChqlp53PSpJwUq7rmRnQuGCGLVUfmZ8bta0%2FAEyMFm5vj1TlDQ5Yj2yn%2FMK%2FoBFtyhV1gnUzpnE7it4Y2QLZeC1cascNe62aozfFLaEP4L6wy7gOzqFj80SptcnKZFNIm2UgEWkkxjyMDpRA21WXwWVIT1WOxnYUyZRFPXYAGd2FJ4RkgeoZ5LIV1l1fGX0xxK0v2ngt0phIqGmi9dUzww3heZOKEF0jCwHq3DAsgenrqiW4SwgRck2DLyInKGS6wOg6%2Ff1PldNFMzql35hQs2z%2BZnBmjGM18chHgsgsL0%2BtkNLW2ovVfQQzypnEUoXGvvrSn57%2F3mEhR2QL6kkz4N0BE%2FG33V7fKbY22gypNLRMDRp9XQ4UCqA8ZhI2DG8PUOtp%2FDNYE2CaWquBspUkVnN8wdctLlI7x3gw397DxgY6pgGsaTVG0hl75Tkj%2FYDEjwJni9QS32ULsL9sVjAwtNIPPA3Q8altMBGofvDZUhkS7QnxMxgKS%2Bc2PFu2GJLgpygkIqJGEgYbHSY%2F4ZM0MgB3cEe5d4svYaz6zHcr6swn%2BUaAp8u2jRSWo54DGgsswZJOGC47yjMyoXjnyWGtrIIt8shn1pPjKQtQDCZK1homEyhlFIqAVTu0Sp%2FFGQo82GFdeoMF8l3R&X-Amz-Signature=64096a07f017479b4ae6fa14ac54a75a5ae7c4d7c253de9443d12212b16281ed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+
+## 7. pixel 심기
+  @mention 
+
+## 8. Zoom 영상 Webflow에 추가하기
+  - zoom 영상은 webflow에 바로 적용되지 않습니다. 왜냐하면, webflow에서는 youtube, vimeo 영상만을 호환해서 작업할 수 있습니다. 해서 저는 zoom 영상 같은 경우, vimeo에 저장 후 webflow에 적용하였는데요! 지금부터 사용법 안내드릴게요 🙂
+  [https://vimeo.com/](https://vimeo.com/)
+  - ▶ 로그인
+    - ID: contact@teamsparta.co (구글로 로그인)
+    - PW: Tmvkfmxk0423
+  - ▶ 업로드하기
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/6a972d12-4850-48f7-9f39-19b3938e1ca5/Screenshot_2023-06-30_at_6.16.23_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UKVNGSMV%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDbOGg0cd6eITQG7r%2FLTbj%2FR7O99Sr%2BSpa967Z%2BT2tX8AIhAKs2zcy5N5oIn7wt0aQGNNufwXS5Jp%2FsGOTHs4HSUWoMKv8DCCgQABoMNjM3NDIzMTgzODA1IgxfIrWJ%2FqhMT9HuKP4q3APL9NLjGt7AhAKvHmS8FpCm%2BZff8snabUFNCp9TiGLiWZHE%2FQUXZzCxlxytW7gaoMLJDGHjTRH6yHrdJpgFiPau6xzCUjFli1573m0TkLPH9h2D%2BdT3SrSrsnzmeK1JO5kJcXsZQEoG4J2q4hkXuBmlj16JruK0mKHVemy5ncGszl8GMXHZ8mz5%2BiGYOGvBXU2Oi684liHBFIY%2B70lTrFBjk6AW9b3YLMA8TSgitDP4z7gHcg%2B5R6u2JJcvJ3kR8g%2BO7oQigNkn4cK5T1G%2BDWvomA3wUowKI9hKF35h7lSaA1dzGAlAYCPW%2B8uh8Rv1EcZZnQuRAuYz60GRFGyAwUOPDTw4oF651SWIUuJS4u0%2BMZSsbFRhlEXqwb2HZbuLmGsg%2FYJvX4C0666N4AI7mgO3dYuoAKboOS4csXE1xk1r3N238bIX9V1t7CKP1mnVBeBh804hI8BEBgllYV7ExYpvZ8DJ85hmUrSi%2BNzN5PeEsewtMBWIzxm7MEt%2FUl113XMcGI%2FJEywkaEQ9x12kLYigu3MhflcaYCH1iwPeTpPo%2FJ77yMn1mem3GPlUAGaw2UUc32hiZ1a7v6KZBUA0JsL8O%2BCLqkp1sXleUZ57P%2FkBZYs7LQfFdu%2BVkh1TKTCZ38PGBjqkAQEFy4WbkTAECQC7pIxymPmuPTYk1swfAjBGyWLfD%2FEEYKy6pBKMIZJncky1P778URvJFUFQVYuyUQ3cs8X3VtAztfioZw%2BpMFfBr47d%2F6SWU7oWOan3%2FWNMfzUPZrDUIqNpv2JBuW8jX1EAGhloAZ4aujP%2Fay%2F7EoOXuBwt%2Bn2wZo1S1PxUbHq%2F9VOi0Z9pcHH4zYtFi%2FT6a%2BTADKUogP8NQrUD&X-Amz-Signature=e25e790e9dfb3ff57ca55c57a8ff30bddf2f29771559621eefc90cf9f7156400&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ zoom에서 다운받은 영상 추가하기
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/50619e12-0ecc-46bd-a460-c6e8c4b2cdd3/Screenshot_2023-06-30_at_6.18.06_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VCA6P7JK%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIBH45NUnr%2Fy0LfeS0UbnI%2Fg9IcH8gvWyLTh60AL55OVuAiBRTYLid%2Fid6cD5p96WMre6aeicgYU%2B4MUJRlDj7eGwSir%2FAwgoEAAaDDYzNzQyMzE4MzgwNSIM7GA25uHzMxocmYRxKtwDY7FgVQ7TSsCuFDJ6A8K4a%2Fj2si%2FJTFkJ9FZbwxu69LYWnt1xc23QLeTsk8wWpahJZ2IbLaLJhou7o0WsOBIQN%2B6yT%2FVWt3r4nQojvoqzMlQZrLm2tZ4gs2Lt2kXLvoDAlp4f1KorXY7Pv24ldL1Q7qDc4www0tbua9KWe%2FKiwA7bnyFWL4pQACkPw5cnQoHkL1PWwC2fmP1wvrJN7x%2F86Avh%2FtS2Da2LAK7W70u%2BvX46sfwxXV76OSFl0kbWYIRk6eGB5wbbyyY5aIMrkfwdA1HgtGkkvubfS5%2F9Ff1hbwpmZOxwXrHaVsE%2Fg1cVLvXMTMSdl%2F3aZEUZ%2FuUTtY9WQeTCWRCYBx4b9ykajAmIALAe64y2RzklmKWZZ%2Bd5pTUE%2Frgcm6rDdtT8p5X%2BAxIsdiD0y9qApvjL9a2rrAk1kebOZyzvgrU2m9uMNt6zwQn%2FqlAaDxsGIQniV7O30SpEvCfCUja1%2FBLCxRJhElLA73mLsbQ1dDAp05OaKMZLPStsELSMLIV5eMp1GCmjCbLhDyxirHqrE0bfeYy1xwO%2Fn5PvWpBDpCCCYfCsOM5Jc9TSRuHY2NY4hZG1Y073Z1cRwjCjMZXmoourxekLLvC%2F55V5M%2BJOohtP8NhfVu0wqN7DxgY6pgF6Z6f8%2BEb3SHf%2BzxBo4q2GbrJV89%2BRHBIfTr2z1i1kpL%2FzLiBmZNHJHFuJPZEnBda8B0uTLtD2M1O8CL9LE%2BZMdKAUWqLGc5BBsptIqSAa46ant%2FtSxeQyCg5ANwmaoi790yeVBPRX3WCm0AhhAkVYs16jx9FFndCh06bMVDmzUsMtjSP3trT3U2wBvHTUkpbSGPQm%2Ft57IfloMPj7xI%2F2rdtXm3IL&X-Amz-Signature=f5c3e9998d45874cdeb6f42c248d5890028f76a17e523dfb1112534766b4bc58&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  - ▶ Unlisted 클릭
+    https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/868a37c8-1919-45a9-9b05-5e8ba972972a/Screenshot_2023-06-30_at_6.24.54_PM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YX3FPK6K%2F20250922%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250922T073739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDIyRjHs8%2FnCP4VCI2eKwxDcJaGb6KHXdIcEQN2wmKZiQIhAPtUEICp%2B4sQbj3Ix08AdsVMPORnvzvRul%2Bgbx1WSsuKKv8DCCgQABoMNjM3NDIzMTgzODA1IgwMW6wMHxZ0pRsI4Bcq3APYssNxnraRfi4JvVUh3siGnLnrdTEuJH1g1LJhcf1y8oExp8dGAjg25%2FAhuf0szCJT3thmibE3yF%2Ft5nOcTBThabf0bzuAfnKPug3FeGVAlr7%2FDsq4tnY3edS0byAWIsYGVNsxiSUU%2Fvp%2BwYnMXoeNucF6PSy3yMReDmIG1WfXwm8ursAwqmNi%2BnxUiEc%2BXLjoaRo1F%2BMjJdJiiuFDawO9eJGE3pZlcJi2eNOU37Lxv7tfXHPMNBhMF%2BEwfu4O8%2B6%2Fiz%2FUlVS39V6Tnk4h%2BKBFQqovRInO%2BauvZJLqaz6odFAW2YCYeUXbs5dqkNOcWVoD0zS7EWbNJUWWSmfAi3Rl88OszH1u5QtsFmKZcDNvfoJwPWIbf2huVADfW5cHJCuMB8YAHWVZHIztQXNtn3OsUUUI4j61ZpTGJDpHD5xYnOerLj07L5zg3PCnbNCi68qenhF%2B5YTk0tgfxnplX5CezdrVKrX6EC1XkabXX6q2IQKyK0PylTKo0ogcwEa3Upzcq5LOP%2FXvFKrTulZ5515Uo20DOwUKgxbo9rhO7s1tklAqp3cPmZIZo7XoNwYHj3E8kXQG8dG6MYUwtecKn6WFER3R8RKrWXa%2F6xVRaUDBy%2BKgTpaMHijRGFJ%2BzjCO38PGBjqkAat0fPTgYQFnY32D0lJgfrz0ZYaf4UY7OJaSKmyIzuHV9F6N8XV9YpaJz8gCKwWa1tRqk%2BrwaEFvm0CaVOK2D6y6iBbFBiV2hhXHVQHV1SSTy7rZOTVTy1wQgV2u3w%2FAwb56%2BVYIntEKXGZfzDb7Ecvd0CiJLTp059QPMAdE20%2B%2B9IhuxDKE0YG8wJPyPt6AeQU1j0NcyUbXP7HT0CVwJMvH85f4&X-Amz-Signature=019a0af178fe3b2b28b08f6f942c8f007f3d18d7b0050158d425632b6e5cec6f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject
+  > 💡 이노베이션 캠프
+  이노베이션캠프 랜딩페이지 : [링크](https://innovationcampineast.webflow.io/) ([https://innovationcampineast.webflow.io/](https://innovationcampineast.webflow.io/))
+  이노베이션캠프 1차지원 : [링크](https://innovationcampineast.webflow.io/1-application) ([https://innovationcampineast.webflow.io/1-application](https://innovationcampineast.webflow.io/1-application))
+  이노베이션캠프 인터뷰 제출 : [링크](https://innovationcampineast.webflow.io/self-interview) ([https://innovationcampineast.webflow.io/self-interview](https://innovationcampineast.webflow.io/self-interview))
+  > 💡 지인추천 페이지(항해 풀타임, 항해 프리코스, 내배캠, {창}, SW캠프)
+  항해 풀타임 지인추천 랜딩페이지 : [링크](https://hh-recommend.webflow.io/) ([https://hh-recommend.webflow.io/](https://hh-recommend.webflow.io/))
+  항해 풀타임 지인추천 완료페이지 : [링크](https://hh-recommend.webflow.io/recommend) ([https://hh-recommend.webflow.io/recommend](https://hh-recommend.webflow.io/recommend))
+  항해 풀타임 피추천인 페이지 : [링크](https://hh-recommend.webflow.io/recommendee) ([https://hh-recommend.webflow.io/recommendee](https://hh-recommend.webflow.io/recommendee))
+  PM코스 지인추천 랜딩페이지 : [링크](https://sw-recommend.webflow.io/) ([https://sw-recommend.webflow.io/](https://sw-recommend.webflow.io/))
+  PM코스 지인추천 완료페이지 : [링크](https://sw-recommend.webflow.io/recommend) ([https://sw-recommend.webflow.io/recommend](https://sw-recommend.webflow.io/recommend))
+  PM코스 피추천인 페이지 : [링크](https://sw-recommend.webflow.io/recommendee) ([https://sw-recommend.webflow.io/recommendee](https://sw-recommend.webflow.io/recommendee))
+  내일배움캠프 지인추천 랜딩페이지 : [링크](https://nbc-recommend.webflow.io/) ([https://nbc-recommend.webflow.io/](https://nbc-recommend.webflow.io/))
+  내일배움캠프 지인추천 완료페이지 : [링크](https://nbc-recommend.webflow.io/recommend) ([https://nbc-recommend.webflow.io/recommend](https://nbc-recommend.webflow.io/recommend))
+  내일배움캠프 피추천인 페이지 : [링크](https://nbc-recommend.webflow.io/recommendee) ([https://nbc-recommend.webflow.io/recommendee](https://nbc-recommend.webflow.io/recommendee))
+  창 지인추천 랜딩페이지 : [링크](https://chang-recommend.webflow.io/) ([https://chang-recommend.webflow.io/](https://chang-recommend.webflow.io/))
+  창 지인추천 완료 페이지 : [링크](https://chang-recommend.webflow.io/recommend) ([https://chang-recommend.webflow.io/recommend](https://chang-recommend.webflow.io/recommend))
+  창 피추천인 페이지 : [링크](https://chang-recommend.webflow.io/recommendee) ([https://chang-recommend.webflow.io/recommendee](https://chang-recommend.webflow.io/recommendee))
+  항해 프리코스 지인추천 랜딩페이지 : [링크](https://hhpre-recommend.webflow.io/) ([https://hhpre-recommend.webflow.io/](https://hhpre-recommend.webflow.io/))
+  항해 프리코스 지인추천 완료페이지 : 링크 ([https://hhpre-recommend.webflow.io/recommend](https://hhpre-recommend.webflow.io/recommend))
+  > 💡 사전설명회 다시보기(항해, SW캠프)
+  > 💡 웨비나 다시보기(항해 플러스)
+  > 💡 내일배움단 대학생
+  > 💡 작고 소중한 앱개발 공모전",,,
