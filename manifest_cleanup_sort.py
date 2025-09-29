@@ -7,12 +7,13 @@ manifest_cleanup_sort_date_in_title.py
 """
 
 import csv
-import os
 import re
 from datetime import datetime
+from pathlib import Path
 
-IN_PATH = "/Users/seungsoo/Desktop/notion_backup_0907/out/manifest.csv"
-OUT_PATH = "/Users/seungsoo/Desktop/notion_backup_0907/out/manifest_dedup_sorted.csv"
+BASE_DIR = Path(__file__).resolve().parent
+IN_PATH = BASE_DIR / "out" / "manifest.csv"
+OUT_PATH = BASE_DIR / "out" / "manifest_dedup_sorted.csv"
 
 HEADERS = ["created_date", "title", "id", "url", "object_type", "methods"]
 
@@ -39,12 +40,12 @@ def extract_date_from_title_or_created(row) -> datetime:
     return _parse_date(row.get("created_date", ""))
 
 def main():
-    if not os.path.exists(IN_PATH):
+    if not IN_PATH.exists():
         raise SystemExit(f"입력 파일이 없습니다: {IN_PATH}")
 
     # id별 병합
     by_id = {}
-    with open(IN_PATH, "r", newline="", encoding="utf-8") as f:
+    with IN_PATH.open("r", newline="", encoding="utf-8") as f:
         rdr = csv.DictReader(f)
         for row in rdr:
             rid = (row.get("id") or "").strip()
@@ -77,11 +78,11 @@ def main():
                                (x["title"] or "").casefold()))
 
     # 기존 파일 삭제 후 새로 작성
-    if os.path.exists(OUT_PATH):
-        os.remove(OUT_PATH)
+    if OUT_PATH.exists():
+        OUT_PATH.unlink()
 
-    os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
-    with open(OUT_PATH, "w", newline="", encoding="utf-8") as f:
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with OUT_PATH.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=HEADERS)
         w.writeheader()
         for r in merged:

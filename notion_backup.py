@@ -1,9 +1,14 @@
-from typing import Optional, Dict, List, Set
+from typing import Optional, Dict, List, Set, Union
+from pathlib import Path
 import notion_index_from_url as niu
 from notion_index_from_url import *  # reuse helpers/constants (log, _req, BASE_URL, etc.)
 
+BASE_DIR = Path(__file__).resolve().parent
+DEFAULT_OUT_PATH = BASE_DIR / "out" / "manifest.csv"
+
+
 def scan_mentions_workspace_batch20_autosave(
-    out_csv_path: str = "/Users/seungsoo/Desktop/notion_backup_0907/out/manifest.csv",
+    out_csv_path: Union[str, Path] = DEFAULT_OUT_PATH,
     include_mentions: bool = True,
     mentions_block_limit: int = 200,
     incremental: bool = True,
@@ -14,7 +19,7 @@ def scan_mentions_workspace_batch20_autosave(
     '20개' 단위로 스캔 & 자동 저장하는 경량 스캐너.
     - 페이지(독립 페이지)와 DB 아이템(페이지)만 기록
     - 매칭 기준: 생성자/편집자 == 타깃, 또는 속성/본문에 타깃 멘션/이메일/이름 문자열 포함
-    - out_csv_path: manifest.csv 절대경로
+    - out_csv_path: manifest.csv 저장 경로 (기본: 프로젝트 루트/out/manifest.csv)
     - include_mentions: 속성/본문 검색 ON/OFF
     - mentions_block_limit: 본문 블록 최대 스캔 수
     - incremental: seen_ids 기반 증분 실행
@@ -48,6 +53,7 @@ def scan_mentions_workspace_batch20_autosave(
     seen_pages: Set[str] = scan_reg.get("pages", {}).get("seen_ids", set())
     seen_dbs: Set[str] = scan_reg.get("databases", {}).get("seen_ids", set())
     seen_db_items: Dict[str, Dict[str, Set[str]]] = scan_reg.get("db_items", {})
+    out_csv_path = Path(out_csv_path).expanduser()
     manifest_ids: Set[str] = load_manifest_ids(out_csv_path)
 
     pending_rows: List[Dict] = []
@@ -225,7 +231,7 @@ def scan_mentions_workspace_batch20_autosave(
 if __name__ == "__main__":
     import argparse
 
-    default_out = "/Users/seungsoo/Desktop/notion_backup_0907/out/manifest.csv"
+    default_out = str(DEFAULT_OUT_PATH)
 
     parser = argparse.ArgumentParser(description="Workspace-wide mention scan (20-per-batch autosave)")
     parser.add_argument("--out", type=str, default=default_out, help="manifest.csv 저장 경로")

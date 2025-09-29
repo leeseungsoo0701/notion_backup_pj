@@ -12,6 +12,7 @@ import sys
 import csv
 import requests
 import datetime
+from pathlib import Path
 
 NOTION_TOKEN = os.environ.get("NOTION_TOKEN")
 BASE_URL = "https://api.notion.com/v1"
@@ -20,7 +21,7 @@ HEADERS = {
     "Notion-Version": "2022-06-28"
 }
 
-OUTFILE = "/Users/seungsoo/Desktop/notion_backup_0907/out/manifest.csv"
+OUTFILE = Path(__file__).resolve().parent / "out" / "manifest.csv"
 
 
 def get_block_children(block_id):
@@ -105,8 +106,8 @@ def main():
     start_url = sys.argv[1]
     visited = set()
 
-    os.makedirs(os.path.dirname(OUTFILE), exist_ok=True)
-    with open(OUTFILE, "w", encoding="utf-8", newline="") as f:
+    OUTFILE.parent.mkdir(parents=True, exist_ok=True)
+    with OUTFILE.open("w", encoding="utf-8", newline="") as f:
         writer = csv.writer(f)
         writer.writerow(["created_date", "title", "id", "url", "object_type", "methods"])
         crawl(start_url, writer, visited)
